@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cleantech Grants Tracker · Canada</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #0f1b2d; --navy-mid: #1a2d45; --navy-light: #243652;
+  --blue: #2563eb; --blue-light: #eff6ff; --blue-mid: #bfdbfe;
+  --surface: #f8fafc; --white: #ffffff;
+  --border: #e2e8f0; --border-hover: #cbd5e1;
+  --text-primary: #0f1b2d; --text-secondary: #475569; --text-muted: #94a3b8;
+  --green: #16a34a; --green-light: #f0fdf4; --green-border: #bbf7d0;
+  --amber: #d97706; --amber-light: #fffbeb; --amber-border: #fde68a;
+  --red: #dc2626; --red-light: #fef2f2; --red-border: #fecaca;
+  --teal: #0d9488; --teal-light: #f0fdfa; --teal-border: #99f6e4;
+  --purple: #7c3aed; --purple-light: #faf5ff; --purple-border: #e9d5ff;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06); --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --radius-sm: 10px; --radius-md: 16px; --radius-lg: 20px; --radius-xl: 28px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--surface); color: var(--text-primary); min-height: 100vh; }
+
+/* HEADER */
+header { background: var(--navy); padding: 0 40px; position: sticky; top: 0; z-index: 200; box-shadow: 0 2px 20px rgba(0,0,0,0.25); }
+.header-inner { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 20px; }
+.logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; text-decoration: none; }
+.logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--blue), #60a5fa); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+.logo-text { font-size: 14px; font-weight: 700; color: var(--white); letter-spacing: -0.2px; }
+.logo-sub { font-size: 9px; color: rgba(255,255,255,0.4); font-family: 'DM Mono', monospace; letter-spacing: 0.5px; text-transform: uppercase; }
+.header-search { flex: 1; max-width: 380px; position: relative; }
+.header-search input { width: 100%; background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.12); border-radius: var(--radius-sm); padding: 9px 14px 9px 36px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; color: var(--white); outline: none; transition: all 0.15s; }
+.header-search input::placeholder { color: rgba(255,255,255,0.35); }
+.header-search input:focus { background: rgba(255,255,255,0.13); border-color: rgba(255,255,255,0.3); }
+.search-icon { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); font-size: 12px; opacity: 0.4; pointer-events: none; }
+.header-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.lang-toggle { display: flex; background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.12); border-radius: 8px; overflow: hidden; }
+.lang-btn { padding: 6px 12px; font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.45); background: transparent; border: none; cursor: pointer; transition: all 0.15s; letter-spacing: 0.5px; }
+.lang-btn.active { background: rgba(255,255,255,0.15); color: var(--white); }
+.tracking-pill { display: none; align-items: center; gap: 6px; background: rgba(37,99,235,0.3); border: 1px solid rgba(37,99,235,0.5); border-radius: 100px; padding: 5px 11px; font-size: 11px; font-weight: 600; color: #93c5fd; font-family: 'DM Mono', monospace; cursor: pointer; transition: all 0.15s; }
+.tracking-pill:hover { background: rgba(37,99,235,0.45); }
+.tracking-count { background: var(--blue); color: white; border-radius: 100px; padding: 1px 6px; font-size: 10px; min-width: 18px; text-align: center; }
+
+/* MAIN */
+main { max-width: 1140px; margin: 0 auto; padding: 36px 24px 80px; }
+
+/* HERO */
+.hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1e3a5f 100%); border-radius: var(--radius-xl); padding: 32px 36px; margin-bottom: 28px; position: relative; overflow: hidden; color: var(--white); }
+.hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%); pointer-events: none; }
+.hero-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; position: relative; }
+.hero-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: #93c5fd; font-family: 'DM Mono', monospace; margin-bottom: 7px; }
+.hero-title { font-size: clamp(18px, 2.2vw, 24px); font-weight: 800; letter-spacing: -0.4px; margin-bottom: 7px; line-height: 1.2; }
+.hero-desc { font-size: 13px; opacity: 0.68; max-width: 460px; line-height: 1.6; }
+.hero-stats { display: flex; gap: 28px; flex-shrink: 0; }
+.hero-stat-val { font-size: 28px; font-weight: 800; letter-spacing: -1px; color: #60a5fa; line-height: 1; }
+.hero-stat-label { font-size: 9px; opacity: 0.55; font-family: 'DM Mono', monospace; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* PROVINCE SELECTOR */
+.province-bar { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 14px 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.province-label { font-size: 10px; font-weight: 600; color: var(--text-muted); font-family: 'DM Mono', monospace; letter-spacing: 0.8px; text-transform: uppercase; flex-shrink: 0; }
+.province-chips { display: flex; gap: 6px; flex-wrap: wrap; flex: 1; }
+.pchip { padding: 5px 12px; border-radius: 100px; font-size: 11px; font-weight: 700; border: 1.5px solid var(--border); background: var(--surface); color: var(--text-secondary); cursor: pointer; transition: all 0.15s; font-family: 'DM Mono', monospace; letter-spacing: 0.3px; white-space: nowrap; }
+.pchip:hover { border-color: var(--blue); color: var(--blue); }
+.pchip.active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.pchip.federal { }
+.pchip.federal.active { background: var(--blue); border-color: var(--blue); }
+
+/* FILTERS */
+.filters-bar { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 13px 20px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.filter-label { font-size: 10px; font-weight: 600; color: var(--text-muted); font-family: 'DM Mono', monospace; letter-spacing: 0.8px; text-transform: uppercase; flex-shrink: 0; }
+.filter-chips { display: flex; gap: 6px; flex-wrap: wrap; flex: 1; }
+.chip { padding: 4px 11px; border-radius: 100px; font-size: 11px; font-weight: 600; border: 1.5px solid var(--border); background: var(--surface); color: var(--text-secondary); cursor: pointer; transition: all 0.15s; font-family: 'Plus Jakarta Sans', sans-serif; }
+.chip:hover { border-color: var(--blue); color: var(--blue); }
+.chip.active { background: var(--blue-light); border-color: var(--blue); color: var(--blue); }
+.filter-divider { width: 1px; height: 18px; background: var(--border); flex-shrink: 0; }
+.clear-btn { font-size: 12px; font-weight: 600; color: var(--text-muted); background: none; border: none; cursor: pointer; padding: 4px 8px; border-radius: 6px; transition: all 0.15s; font-family: 'Plus Jakarta Sans', sans-serif; white-space: nowrap; }
+.clear-btn:hover { color: var(--text-primary); background: var(--surface); }
+
+/* TRACKING SECTION */
+.tracking-section { display: none; margin-bottom: 32px; }
+.tracking-section.visible { display: block; }
+.section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.section-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-muted); font-family: 'DM Mono', monospace; }
+.section-count { font-size: 10px; font-family: 'DM Mono', monospace; font-weight: 700; background: var(--blue-light); color: var(--blue); padding: 2px 8px; border-radius: 100px; }
+
+/* RESULTS META */
+.results-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.results-label { font-size: 10px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-muted); font-family: 'DM Mono', monospace; }
+.results-count { font-size: 11px; color: var(--text-muted); font-family: 'DM Mono', monospace; }
+
+/* GRANT GRID */
+.grant-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* GRANT CARD */
+.grant-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: box-shadow 0.18s, border-color 0.18s; animation: fadeUp 0.25s ease both; }
+.grant-card:hover { box-shadow: var(--shadow-md); border-color: var(--border-hover); }
+.grant-card.bookmarked { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,0.07); }
+.grant-header { padding: 18px 18px 14px; cursor: pointer; display: flex; gap: 12px; align-items: flex-start; }
+.grant-funder-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+.grant-header-main { flex: 1; min-width: 0; }
+.grant-name { font-size: 14px; font-weight: 700; letter-spacing: -0.2px; color: var(--text-primary); margin-bottom: 2px; line-height: 1.3; }
+.grant-funder-label { font-size: 10px; color: var(--text-muted); font-family: 'DM Mono', monospace; font-weight: 500; margin-bottom: 9px; }
+.grant-meta-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.status-badge { display: inline-flex; align-items: center; gap: 3px; font-size: 9px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 3px 8px; border-radius: 100px; font-family: 'DM Mono', monospace; }
+.status-open { background: var(--green-light); color: var(--green); border: 1px solid var(--green-border); }
+.status-open::before { content: '●'; font-size: 6px; }
+.status-rolling { background: var(--teal-light); color: var(--teal); border: 1px solid var(--teal-border); }
+.status-rolling::before { content: '∞'; font-size: 9px; }
+.status-closing { background: var(--amber-light); color: var(--amber); border: 1px solid var(--amber-border); }
+.status-closing::before { content: '●'; font-size: 6px; }
+.status-closed { background: var(--red-light); color: var(--red); border: 1px solid var(--red-border); }
+.status-closed::before { content: '●'; font-size: 6px; }
+.amount-pill { font-size: 11px; font-weight: 700; color: var(--text-primary); font-family: 'DM Mono', monospace; background: var(--surface); border: 1px solid var(--border); padding: 2px 8px; border-radius: 100px; }
+.tag { font-size: 9px; font-weight: 600; letter-spacing: 0.3px; padding: 2px 7px; border-radius: 5px; font-family: 'DM Mono', monospace; }
+.tag-federal { background: var(--blue-light); color: var(--blue); }
+.tag-provincial { background: #fdf2f8; color: #be185d; }
+.tag-ai { background: #fdf4ff; color: #7e22ce; }
+.tag-cleantech { background: var(--green-light); color: var(--green); }
+.tag-rd { background: #fff7ed; color: #c2410c; }
+.tag-financing { background: #f0f9ff; color: #0369a1; }
+.tag-energy { background: #fefce8; color: #854d0e; }
+.grant-header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+.bookmark-btn { width: 30px; height: 30px; border-radius: 7px; border: 1.5px solid var(--border); background: var(--surface); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 13px; transition: all 0.15s; color: var(--text-muted); }
+.bookmark-btn:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+.bookmark-btn.active { background: var(--blue); border-color: var(--blue); color: white; }
+.expand-chevron { font-size: 9px; color: var(--text-muted); transition: transform 0.2s; margin-top: 2px; cursor: pointer; }
+.grant-card.open .expand-chevron { transform: rotate(180deg); }
+
+/* PROVINCE BADGE */
+.province-badge { font-size: 9px; font-weight: 700; font-family: 'DM Mono', monospace; letter-spacing: 0.4px; padding: 2px 7px; border-radius: 5px; background: var(--navy); color: rgba(255,255,255,0.85); }
+
+/* GRANT BODY */
+.grant-body { display: none; padding: 0 18px 18px; border-top: 1px solid var(--border); }
+.grant-card.open .grant-body { display: block; }
+.grant-body-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
+.gb-label { font-size: 9px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-muted); font-family: 'DM Mono', monospace; margin-bottom: 7px; }
+.gb-text { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+.gb-row { display: flex; justify-content: space-between; align-items: flex-start; font-size: 11px; padding: 5px 0; border-bottom: 1px solid var(--border); gap: 8px; }
+.gb-row:last-child { border-bottom: none; }
+.gb-key { color: var(--text-secondary); flex-shrink: 0; }
+.gb-val { font-family: 'DM Mono', monospace; font-weight: 600; color: var(--text-primary); text-align: right; line-height: 1.4; }
+.gb-note { margin-top: 12px; padding: 9px 11px; background: var(--amber-light); border-radius: 8px; border: 1px solid var(--amber-border); }
+.gb-note-label { font-size: 9px; font-weight: 700; color: var(--amber); font-family: 'DM Mono', monospace; letter-spacing: 0.5px; margin-bottom: 3px; }
+.gb-note-text { font-size: 11px; color: #92400e; line-height: 1.5; }
+.gb-window { margin-top: 10px; padding: 9px 11px; background: var(--green-light); border-radius: 8px; border: 1px solid var(--green-border); }
+.gb-window-label { font-size: 9px; font-weight: 700; color: var(--green); font-family: 'DM Mono', monospace; letter-spacing: 0.5px; margin-bottom: 3px; }
+.gb-window-text { font-size: 11px; color: #14532d; line-height: 1.5; font-family: 'DM Mono', monospace; }
+.grant-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 12px; padding: 8px 14px; background: var(--navy); color: var(--white); border-radius: 8px; font-size: 11px; font-weight: 600; text-decoration: none; transition: all 0.15s; }
+.grant-link:hover { background: var(--navy-mid); }
+
+/* EMPTY STATE */
+.empty-state { text-align: center; padding: 60px 24px; color: var(--text-muted); grid-column: 1/-1; }
+.empty-icon { font-size: 36px; margin-bottom: 10px; }
+.empty-title { font-size: 15px; font-weight: 700; color: var(--text-secondary); margin-bottom: 5px; }
+.empty-desc { font-size: 13px; }
+
+/* FOOTER */
+footer { max-width: 1140px; margin: 0 auto; padding: 20px 24px 40px; border-top: 1px solid var(--border); display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.footer-note { font-size: 10px; color: var(--text-muted); font-family: 'DM Mono', monospace; line-height: 1.7; max-width: 560px; }
+.footer-note a { color: var(--blue); text-decoration: none; }
+.footer-updated { font-size: 10px; color: var(--text-muted); font-family: 'DM Mono', monospace; text-align: right; flex-shrink: 0; line-height: 1.6; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 780px) {
+  header { padding: 0 16px; }
+  main { padding: 20px 14px 60px; }
+  .hero { padding: 22px 18px; }
+  .hero-inner { flex-direction: column; gap: 16px; }
+  .grant-grid { grid-template-columns: 1fr; }
+  .grant-body-grid { grid-template-columns: 1fr; }
+  .header-search { display: none; }
+  .hero-stats { justify-content: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">🍁</div>
+      <div>
+        <div class="logo-text" data-en="Cleantech Grants Tracker" data-fr="Répertoire des subventions technologiques">Cleantech Grants Tracker</div>
+        <div class="logo-sub" data-en="Canada · 2026" data-fr="Canada · 2026">Canada · 2026</div>
+      </div>
+    </div>
+    <div class="header-search">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Search grants…" oninput="renderAll()">
+    </div>
+    <div class="header-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btn-fr" onclick="setLang('fr')">FR</button>
+      </div>
+      <div class="tracking-pill" onclick="scrollToTracking()" id="trackingPill">
+        <span data-en="Tracking" data-fr="Suivi">Tracking</span>
+        <span class="tracking-count" id="trackingCount">0</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow" data-en="Pan-Canadian Funding Intelligence · All Provinces" data-fr="Financement pancanadien · Toutes les provinces">Pan-Canadian Funding Intelligence · All Provinces</div>
+        <div class="hero-title" data-en="Federal & provincial grants for<br>cleantech and AI companies — coast to coast." data-fr="Subventions fédérales et provinciales pour<br>les entreprises de technologie propre et d'IA — d'un océan à l'autre.">Federal & provincial grants for<br>cleantech and AI companies — coast to coast.</div>
+        <div class="hero-desc" data-en="Verified programs across all 10 provinces. Filter by province to see what's available where you operate. Bookmark programs you're tracking." data-fr="Programmes vérifiés dans les 10 provinces. Filtrez par province pour voir ce qui est disponible là où vous opérez. Sauvegardez les programmes que vous suivez.">Verified programs across all 10 provinces. Filter by province to see what's available where you operate. Bookmark programs you're tracking.</div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-val" id="statTotal">0</div><div class="hero-stat-label" data-en="Programs" data-fr="Programmes">Programs</div></div>
+        <div class="hero-stat"><div class="hero-stat-val" id="statOpen">0</div><div class="hero-stat-label" data-en="Open / Rolling" data-fr="Ouverts / Continus">Open / Rolling</div></div>
+        <div class="hero-stat"><div class="hero-stat-val" id="statTracking">0</div><div class="hero-stat-label" data-en="Tracking" data-fr="Suivis">Tracking</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="province-bar">
+    <div class="province-label" data-en="Province" data-fr="Province">Province</div>
+    <div class="province-chips" id="provinceChips"></div>
+  </div>
+
+  <div class="filters-bar">
+    <div class="filter-label" data-en="Filter" data-fr="Filtrer">Filter</div>
+    <div class="filter-chips" id="filterChips"></div>
+    <div class="filter-divider"></div>
+    <button class="clear-btn" onclick="clearAll()" data-en="Clear all" data-fr="Tout effacer">Clear all</button>
+  </div>
+
+  <div class="tracking-section" id="trackingSection">
+    <div class="section-header">
+      <div class="section-eyebrow" data-en="Currently Tracking" data-fr="Suivi actif">Currently Tracking</div>
+      <div class="section-count" id="trackingSectionCount">0</div>
+    </div>
+    <div class="grant-grid" id="trackingGrid"></div>
+  </div>
+
+  <div class="results-meta">
+    <div class="results-label" data-en="Programs" data-fr="Programmes">Programs</div>
+    <div class="results-count" id="resultsCount"></div>
+  </div>
+  <div class="grant-grid" id="grantGrid"></div>
+</main>
+
+<footer>
+  <div class="footer-note" data-en="Data current as of Q1 2026. Program details, deadlines, and eligibility criteria change — always verify on official program pages before applying. SDTC was wound down in 2025 and its mandate transferred to NRC IRAP Clean Technology. This tool is for research purposes only." data-fr="Données à jour au T1 2026. Les détails des programmes changent — vérifiez toujours les pages officielles avant de soumettre une demande. TDDC a été liquidée en 2025 et son mandat transféré au PARI CNRC Technologies propres. Cet outil est fourni à titre informatif seulement.">Data current as of Q1 2026. Program details, deadlines, and eligibility criteria change — always verify on official program pages before applying. SDTC was wound down in 2025 and its mandate transferred to NRC IRAP Clean Technology. This tool is for research purposes only.</div>
+  <div class="footer-updated" data-en="Last updated<br>March 2026" data-fr="Dernière mise à jour<br>Mars 2026">Last updated<br>March 2026</div>
+</footer>
+
+<script>
+// ── LANGUAGE ─────────────────────────────────────────────────────────────────
+let lang = 'en';
+function setLang(l) {
+  lang = l;
+  document.getElementById('btn-en').classList.toggle('active', l === 'en');
+  document.getElementById('btn-fr').classList.toggle('active', l === 'fr');
+  document.querySelectorAll('[data-en]').forEach(el => { el.innerHTML = el.dataset[l] || el.dataset.en; });
+  document.getElementById('searchInput').placeholder = l === 'fr' ? 'Rechercher…' : 'Search grants…';
+  renderProvinceChips();
+  renderFilterChips();
+  renderAll();
+}
+function t(g, f) { return (lang === 'fr' && g[f+'Fr']) ? g[f+'Fr'] : g[f]; }
+
+// ── DATA ─────────────────────────────────────────────────────────────────────
+const PROVINCES = [
+  { id: 'federal', label: 'Federal', labelFr: 'Fédéral' },
+  { id: 'BC',  label: 'BC',  labelFr: 'C.-B.' },
+  { id: 'AB',  label: 'AB',  labelFr: 'Alb.' },
+  { id: 'SK',  label: 'SK',  labelFr: 'Sask.' },
+  { id: 'MB',  label: 'MB',  labelFr: 'Man.' },
+  { id: 'ON',  label: 'ON',  labelFr: 'Ont.' },
+  { id: 'QC',  label: 'QC',  labelFr: 'Qc' },
+  { id: 'NB',  label: 'NB',  labelFr: 'N.-B.' },
+  { id: 'NS',  label: 'NS',  labelFr: 'N.-É.' },
+  { id: 'PE',  label: 'PE',  labelFr: 'Î.-P.-É.' },
+  { id: 'NL',  label: 'NL',  labelFr: 'T.-N.-L.' },
+];
+
+const TAG_DEFS = [
+  { id: 'open',      label: 'Open Now',  labelFr: 'Ouvert',      isStatus: true },
+  { id: 'rolling',   label: 'Rolling',   labelFr: 'Continu',     isStatus: true },
+  { id: 'ai',        label: 'AI',        labelFr: 'IA' },
+  { id: 'cleantech', label: 'Cleantech', labelFr: 'Techno. propre' },
+  { id: 'rd',        label: 'R&D',       labelFr: 'R&D' },
+  { id: 'energy',    label: 'Energy',    labelFr: 'Énergie' },
+  { id: 'financing', label: 'Financing', labelFr: 'Financement' },
+];
+
+const GRANTS = [
+  // ── FEDERAL ───────────────────────────────────────────────────────────────
+  {
+    id: 'nrc-irap', provinces: ['federal'],
+    name: 'NRC IRAP — Industrial Research Assistance Program',
+    nameFr: 'PARI CNRC — Programme d\'aide à la recherche industrielle',
+    funder: 'National Research Council Canada', funderFr: 'Conseil national de recherches Canada',
+    icon: '🔬', iconBg: '#eff6ff',
+    maxAmount: 'Up to $10M+', maxAmountFr: 'Jusqu\'à 10 M$+',
+    status: 'rolling', tags: ['federal','rd','ai','cleantech'],
+    deadline: 'Rolling — contact regional ITA', deadlineFr: 'Continu — contactez un CTI régional',
+    window: 'Open year-round. Cleantech stream (formerly SDTC) integrated as of 2025–2026.',
+    windowFr: 'Ouvert toute l\'année. Volet technologies propres (anciennement TDDC) intégré à partir de 2025–2026.',
+    eligibility: 'Canadian SMEs <500 employees developing innovative technology',
+    eligibilityFr: 'PME canadiennes <500 employés développant des technologies innovantes',
+    description: 'Canada\'s flagship SME R&D program. Now incorporates the former SDTC cleantech mandate. Provides advisory services and funding from proof-of-concept to multi-year commercialization projects. Works across all sectors including AI and energy.',
+    descriptionFr: 'Principal programme de R&D pour PME au Canada. Intègre maintenant le mandat de TDDC pour les technologies propres. Financement du concept à la commercialisation.',
+    url: 'https://nrc.canada.ca/en/support-technology-innovation/nrc-industrial-research-assistance-program',
+    urlFr: 'https://cnrc.canada.ca/fr/soutien-innovation-technologique/programme-aide-recherche-industrielle-cnrc',
+    notes: 'Your regional Industrial Technology Advisor (ITA) relationship is the key. Call 1-877-994-4727 to get connected.',
+    notesFr: 'La relation avec votre conseiller en technologie industrielle (CTI) régional est essentielle. Composez le 1-877-994-4727.',
+  },
+  {
+    id: 'mitacs-accelerate', provinces: ['federal'],
+    name: 'Mitacs Accelerate', nameFr: 'Mitacs Accélération',
+    funder: 'Mitacs', funderFr: 'Mitacs',
+    icon: '🎓', iconBg: '#faf5ff',
+    maxAmount: '$15K–$30K / intern', maxAmountFr: '15 000 $–30 000 $ / stagiaire',
+    status: 'rolling', tags: ['federal','rd','ai'],
+    deadline: 'Rolling intake', deadlineFr: 'Acceptation continue',
+    window: 'Open year-round. Applications reviewed on a rolling basis with ~8-week processing time.',
+    windowFr: 'Ouvert toute l\'année. Délai de traitement d\'environ 8 semaines.',
+    eligibility: 'Any Canadian company partnering with a university on 4–6 month R&D projects',
+    eligibilityFr: 'Toute entreprise canadienne s\'associant à une université pour des projets R&D de 4–6 mois',
+    description: 'Partners companies with graduate students for R&D projects. Company contributes $7,500; Mitacs matches. Ideal for AI model development, data pipelines, and cleantech prototyping. QC companies get additional FRQNT top-up.',
+    descriptionFr: 'Met en relation des entreprises avec des étudiants pour des projets R&D. L\'entreprise contribue 7 500 $; Mitacs verse un montant équivalent. Complément FRQNT disponible au Québec.',
+    url: 'https://www.mitacs.ca/our-programs/accelerate-fellowship-canada/',
+    urlFr: 'https://www.mitacs.ca/fr/programmes/acceleration/',
+    notes: 'Most accessible entry point to Mitacs. Best for companies already connected to a university.',
+    notesFr: 'Point d\'entrée Mitacs le plus accessible. Idéal pour les entreprises déjà connectées à une université.',
+  },
+  {
+    id: 'mitacs-elevate', provinces: ['federal'],
+    name: 'Mitacs Elevate', nameFr: 'Mitacs Élévation',
+    funder: 'Mitacs', funderFr: 'Mitacs',
+    icon: '🎓', iconBg: '#faf5ff',
+    maxAmount: '$60K / fellow/yr', maxAmountFr: '60 000 $ / boursier/an',
+    status: 'rolling', tags: ['federal','rd','ai'],
+    deadline: 'Rolling intake', deadlineFr: 'Acceptation continue',
+    window: 'Open year-round. Two-year fellowship commitment — plan recruitment timeline accordingly.',
+    windowFr: 'Ouvert toute l\'année. Engagement de bourse de deux ans.',
+    eligibility: 'Companies hosting postdoctoral fellows on 2-year applied research projects',
+    eligibilityFr: 'Entreprises accueillant des chercheurs postdoctoraux sur des projets de 2 ans',
+    description: 'Two-year postdoctoral fellowship. $30K/year from company, $30K/year from Mitacs. Best for companies needing deep technical capacity in ML, AI, or engineering.',
+    descriptionFr: 'Bourse postdoctorale de deux ans. 30 000 $/an de l\'entreprise, 30 000 $/an de Mitacs.',
+    url: 'https://www.mitacs.ca/our-programs/elevate/',
+    urlFr: 'https://www.mitacs.ca/fr/programmes/elevation/',
+    notes: 'More selective than Accelerate. Best for companies with a clear multi-year technical roadmap.',
+    notesFr: 'Plus sélectif qu\'Accélération. Idéal pour les entreprises avec une feuille de route technique pluriannuelle.',
+  },
+  {
+    id: 'sred', provinces: ['federal'],
+    name: 'SR&ED — Scientific Research & Experimental Development',
+    nameFr: 'RS&DE — Recherche scientifique et développement expérimental',
+    funder: 'Canada Revenue Agency', funderFr: 'Agence du revenu du Canada',
+    icon: '🧪', iconBg: '#fff7ed',
+    maxAmount: '15–35% tax credit', maxAmountFr: 'Crédit d\'impôt 15–35 %',
+    status: 'rolling', tags: ['federal','rd','ai','cleantech'],
+    deadline: 'Filed with annual corporate tax return', deadlineFr: 'Soumis avec la déclaration de revenus annuelle',
+    window: 'File within 18 months of your fiscal year-end. Document R&D activities throughout the year.',
+    windowFr: 'Dépôt dans les 18 mois suivant la fin de l\'exercice. Documenter les activités R&D tout au long de l\'année.',
+    eligibility: 'Any Canadian corporation conducting eligible R&D — software, AI, and engineering qualify',
+    eligibilityFr: 'Toute société canadienne menant des activités R&D admissibles — logiciels, IA et ingénierie',
+    description: 'Canada\'s largest R&D incentive. CCPCs get 35% refundable credit on first $3M of eligible expenditures. AI training, algorithm development, and cleantech R&D routinely qualify. Can be stacked with most other programs.',
+    descriptionFr: 'Le plus grand programme incitatif R&D au Canada. Les SPCC obtiennent un crédit remboursable de 35 % sur les 3 premiers M$ de dépenses admissibles.',
+    url: 'https://www.canada.ca/en/revenue-agency/services/scientific-research-experimental-development-tax-incentive-program.html',
+    urlFr: 'https://www.canada.ca/fr/agence-revenu/services/recherche-scientifique-developpement-experimental-programme-encouragements-fiscaux.html',
+    notes: 'Engage an SR&ED consultant early. Documentation practices during the year are critical — retroactive reconstruction is risky.',
+    notesFr: 'Engagez un consultant en RS&DE tôt. La documentation en cours d\'année est essentielle.',
+  },
+  {
+    id: 'sif', provinces: ['federal'],
+    name: 'Strategic Innovation Fund (SIF)',
+    nameFr: 'Fonds stratégique pour l\'innovation (FSI)',
+    funder: 'ISED Canada', funderFr: 'ISDE Canada',
+    icon: '🏭', iconBg: '#eff6ff',
+    maxAmount: '$10M – $500M+', maxAmountFr: '10 M$ – 500 M$+',
+    status: 'open', tags: ['federal','cleantech','rd'],
+    deadline: 'Expression of interest — ongoing', deadlineFr: 'Expression d\'intérêt — continue',
+    window: 'Accepts expressions of interest year-round. Full application process typically 12–24 months.',
+    windowFr: 'Expressions d\'intérêt acceptées toute l\'année. Processus complet de 12 à 24 mois.',
+    eligibility: 'Large-scale R&D and commercialization projects — typically Series B+ companies',
+    eligibilityFr: 'Projets de R&D et de commercialisation à grande échelle — typiquement Série B+',
+    description: 'Major federal program for transformative R&D, technology demonstration, and industrial scale-up. Five streams: Agri-food, Clean technology, Digital industries, Life sciences, and Value chains.',
+    descriptionFr: 'Programme fédéral majeur pour la R&D transformatrice et la montée en échelle industrielle. Cinq volets : Agroalimentaire, Technologies propres, Industries numériques, Sciences de la vie, et Chaînes de valeur.',
+    url: 'https://ised.canada.ca/site/strategic-innovation-fund/en',
+    urlFr: 'https://ised.canada.ca/site/fonds-strategique-innovation/fr',
+    notes: 'Best for growth-stage companies. Application timeline is long — begin the process 18+ months before you need the capital.',
+    notesFr: 'Idéal pour les entreprises en croissance. Commencez le processus 18 mois avant d\'avoir besoin des fonds.',
+  },
+  {
+    id: 'eip', provinces: ['federal'],
+    name: 'Energy Innovation Program', nameFr: 'Programme d\'innovation pour l\'énergie propre',
+    funder: 'Natural Resources Canada', funderFr: 'Ressources naturelles Canada',
+    icon: '⚡', iconBg: '#fefce8',
+    maxAmount: 'Up to $20M', maxAmountFr: 'Jusqu\'à 20 M$',
+    status: 'open', tags: ['federal','cleantech','energy','rd'],
+    deadline: 'Call-specific intakes — check NRCan site', deadlineFr: 'Appels spécifiques — vérifier le site de RNCan',
+    window: 'Intakes announced periodically. Current call open as of Q1 2026 — verify status at NRCan.',
+    windowFr: 'Appels annoncés périodiquement. Appel en cours au T1 2026 — vérifier l\'état sur le site de RNCan.',
+    eligibility: 'Companies and research organizations developing clean energy technologies',
+    eligibilityFr: 'Entreprises et organismes développant des technologies d\'énergie propre',
+    description: 'Funds R&D, demonstration, and deployment of clean energy technologies. Priority areas: smart grids, building energy efficiency, industrial decarbonization, energy storage, and hydrogen.',
+    descriptionFr: 'Finance R&D, démonstration et déploiement de technologies d\'énergie propre. Priorités : réseaux intelligents, efficacité énergétique, décarbonisation industrielle, stockage d\'énergie.',
+    url: 'https://natural-resources.canada.ca/science-and-data/funding-partnerships/funding-opportunities/energy-innovation-program/18876',
+    urlFr: 'https://ressources-naturelles.canada.ca/science-et-donnees/financement-et-partenariats/possibilites-de-financement/programme-innovation-energie/18876',
+    notes: 'Particularly relevant for companies building products in the building energy or smart grid space.',
+    notesFr: 'Particulièrement pertinent pour les entreprises dans le domaine de l\'énergie des bâtiments ou des réseaux intelligents.',
+  },
+  {
+    id: 'lcef', provinces: ['federal'],
+    name: 'Low Carbon Economy Fund', nameFr: 'Fonds pour une économie à faibles émissions de carbone',
+    funder: 'Environment & Climate Change Canada', funderFr: 'Environnement et Changement climatique Canada',
+    icon: '🌍', iconBg: '#f0fdf4',
+    maxAmount: 'Varies by stream', maxAmountFr: 'Variable selon le volet',
+    status: 'open', tags: ['federal','cleantech','energy'],
+    deadline: 'Stream-specific — check ECCC site', deadlineFr: 'Spécifique au volet — vérifier le site d\'ECCC',
+    window: 'Multiple streams with staggered intakes. Check ECCC website for current open windows.',
+    windowFr: 'Plusieurs volets avec des fenêtres décalées. Vérifiez le site d\'ECCC pour les fenêtres ouvertes.',
+    eligibility: 'Businesses, municipalities, and organizations with GHG reduction projects',
+    eligibilityFr: 'Entreprises, municipalités et organisations avec des projets de réduction des GES',
+    description: 'Supports projects generating measurable GHG reductions in buildings, industry, and transportation. Evaluated on cost per tonne of CO₂e reduced. Relevant for companies whose products enable decarbonization.',
+    descriptionFr: 'Soutient les projets de réduction mesurable des GES. Évalué sur le coût par tonne de CO₂e réduite.',
+    url: 'https://www.canada.ca/en/environment-climate-change/services/climate-change/low-carbon-economy-fund.html',
+    urlFr: 'https://www.canada.ca/fr/environnement-changement-climatique/services/changements-climatiques/fonds-economie-faibles-emissions-carbone.html',
+    notes: 'Strong business case and monitoring plan are essential. Applications evaluated on $/tonne CO₂e.',
+    notesFr: 'Un plan d\'affaires solide et un plan de surveillance sont essentiels. Évaluation sur le $/tonne CO₂e.',
+  },
+  {
+    id: 'cifar-ai', provinces: ['federal'],
+    name: 'Pan-Canadian AI Strategy (CIFAR / Mila / Vector / Amii)',
+    nameFr: 'Stratégie pancanadienne en matière d\'IA (CIFAR / Mila / Vector / Amii)',
+    funder: 'CIFAR / Government of Canada', funderFr: 'CIFAR / Gouvernement du Canada',
+    icon: '🤖', iconBg: '#fdf4ff',
+    maxAmount: 'Varies by stream', maxAmountFr: 'Variable selon le volet',
+    status: 'open', tags: ['federal','ai','rd'],
+    deadline: 'Program-specific', deadlineFr: 'Spécifique au programme',
+    window: 'Industry partnership programs open year-round at Mila (QC), Vector (ON), and Amii (AB).',
+    windowFr: 'Programmes de partenariat industriel ouverts toute l\'année chez Mila (QC), Vector (ON) et Amii (AB).',
+    eligibility: 'Canadian companies collaborating with national AI institutes on research and talent',
+    eligibilityFr: 'Entreprises canadiennes collaborant avec les instituts nationaux d\'IA',
+    description: 'Access talent pipelines, research partnerships, and commercialization support through Canada\'s three national AI institutes. For Montreal companies, Mila is the critical ecosystem entry point.',
+    descriptionFr: 'Accès aux pipelines de talents et aux partenariats via les trois instituts nationaux d\'IA. Pour les entreprises montréalaises, Mila est le point d\'entrée essentiel.',
+    url: 'https://cifar.ca/ai/',
+    urlFr: 'https://cifar.ca/fr/ia/',
+    notes: 'A Mila industry partnership is especially valuable for Montreal AI companies — access to world-class researchers.',
+    notesFr: 'Un partenariat Mila est particulièrement précieux pour les entreprises d\'IA montréalaises.',
+  },
+  {
+    id: 'bdc-climate', provinces: ['federal'],
+    name: 'BDC Climate Tech Financing', nameFr: 'Financement BDC Technologies climatiques',
+    funder: 'Business Development Bank of Canada', funderFr: 'Banque de développement du Canada',
+    icon: '🏦', iconBg: '#f0f9ff',
+    maxAmount: 'Up to $150M', maxAmountFr: 'Jusqu\'à 150 M$',
+    status: 'rolling', tags: ['federal','cleantech','financing'],
+    deadline: 'Rolling — apply via BDC.ca', deadlineFr: 'Continu — demande via BDC.ca',
+    window: 'Open year-round. BDC advisors available in all provinces.',
+    windowFr: 'Ouvert toute l\'année. Conseillers BDC disponibles dans toutes les provinces.',
+    eligibility: 'Canadian cleantech companies at seed to growth stage',
+    eligibilityFr: 'Entreprises canadiennes de technologies propres de l\'amorçage à la croissance',
+    description: 'Flexible debt and equity financing. Not a grant — but BDC\'s patient capital mandate makes it more accessible than traditional lenders. Includes the $400M Climate Tech fund. Often co-invests alongside VCs.',
+    descriptionFr: 'Financement par dette et capitaux propres flexible. Pas une subvention — mais le mandat de capital patient de la BDC le rend plus accessible.',
+    url: 'https://www.bdc.ca/en/business-advisory-services/industries/clean-technology',
+    urlFr: 'https://www.bdc.ca/fr/services-conseil-affaires/industries/technologie-propre',
+    notes: 'BDC often co-invests alongside angels and VCs. A BDC relationship can open doors to their broader network.',
+    notesFr: 'La BDC co-investit souvent aux côtés d\'anges et de capital-risqueurs.',
+  },
+  {
+    id: 'isc', provinces: ['federal'],
+    name: 'Innovative Solutions Canada', nameFr: 'Solutions innovatrices Canada',
+    funder: 'ISED Canada', funderFr: 'ISDE Canada',
+    icon: '💡', iconBg: '#fefce8',
+    maxAmount: 'Up to $1M + gov\'t contract', maxAmountFr: 'Jusqu\'à 1 M$ + contrat gov.',
+    status: 'open', tags: ['federal','rd','ai','cleantech'],
+    deadline: 'Challenge-specific — check ISC site', deadlineFr: 'Spécifique au défi — vérifier le site SIC',
+    window: 'New challenges posted quarterly. Current challenges open at time of publication — verify current status.',
+    windowFr: 'Nouveaux défis publiés trimestriellement. Vérifiez l\'état actuel sur le site.',
+    eligibility: 'Canadian SMEs with <500 employees developing prototype-stage technologies',
+    eligibilityFr: 'PME canadiennes <500 employés avec des technologies au stade prototype',
+    description: 'Challenge-based program where government departments post technology problems. Companies solve them for up to $150K (proof-of-concept) or $1M (prototype), and may receive a follow-on government procurement contract.',
+    descriptionFr: 'Programme basé sur des défis où les ministères publient des problèmes technologiques. Les entreprises les résolvent pour jusqu\'à 150 000 $ (preuve de concept) ou 1 M$ (prototype).',
+    url: 'https://www.ic.gc.ca/eic/site/101.nsf/eng/home',
+    urlFr: 'https://www.ic.gc.ca/eic/site/101.nsf/fra/accueil',
+    notes: 'Less competition than IRAP — challenges are specific. Monitor the ISC site for new challenges relevant to your technology.',
+    notesFr: 'Moins de concurrence qu\'IRAP — les défis sont spécifiques. Surveillez le site SIC pour les nouveaux défis pertinents.',
+  },
+
+  // ── BRITISH COLUMBIA ──────────────────────────────────────────────────────
+  {
+    id: 'innovate-bc-ignite', provinces: ['BC'],
+    name: 'Innovate BC — Ignite Program', nameFr: 'Innovate BC — Programme Ignite',
+    funder: 'Innovate BC', funderFr: 'Innovate BC',
+    icon: '🔷', iconBg: '#eff6ff',
+    maxAmount: 'Up to $300K', maxAmountFr: 'Jusqu\'à 300 000 $',
+    status: 'closing', tags: ['provincial','rd','cleantech'],
+    deadline: 'Next intake: mid-2026 (expected)', deadlineFr: 'Prochain appel : mi-2026 (prévu)',
+    window: 'Current intake closed. Next intake expected mid-2026. Subscribe to Innovate BC alerts.',
+    windowFr: 'Appel actuel fermé. Prochain appel prévu mi-2026. Abonnez-vous aux alertes d\'Innovate BC.',
+    eligibility: 'BC-based companies in natural resources, applied science, or engineering partnering with a post-secondary institution',
+    eligibilityFr: 'Entreprises de C.-B. en ressources naturelles, sciences appliquées ou ingénierie, en partenariat avec un établissement d\'enseignement supérieur',
+    description: 'Funds research and commercialization activities. Requires 2:1 matching ($1 Ignite → $2 from other sources). Maximum $300K paid in annual installments. Focused on cleantech, digital, and resource sectors.',
+    descriptionFr: 'Finance les activités de recherche et de commercialisation. Exige un financement de contrepartie 2:1. Maximum de 300 000 $ versé en versements annuels.',
+    url: 'https://www.innovatebc.ca/programs/ignite/',
+    urlFr: 'https://www.innovatebc.ca/programs/ignite/',
+    notes: 'Competitive but accessible. Most successful applications combine cleantech/AI with a clear BC industry application.',
+    notesFr: 'Compétitif mais accessible. Les candidatures les plus réussies combinent technologies propres/IA avec une application industrielle claire en C.-B.',
+  },
+  {
+    id: 'ice-fund', provinces: ['BC'],
+    name: 'Innovate Clean Energy Fund (ICE)', nameFr: 'Fonds Innovate Clean Energy (ICE)',
+    funder: 'BC Ministry of Energy', funderFr: 'Ministère de l\'Énergie de la C.-B.',
+    icon: '🌊', iconBg: '#f0fdf4',
+    maxAmount: 'Up to $2M', maxAmountFr: 'Jusqu\'à 2 M$',
+    status: 'open', tags: ['provincial','cleantech','energy','rd'],
+    deadline: 'Spring 2026 intake open (verify current status)', deadlineFr: 'Appel printemps 2026 ouvert (vérifier l\'état actuel)',
+    window: 'Spring 2025 intake confirmed. Spring 2026 intake expected — check BC Ministry of Energy site.',
+    windowFr: 'Appel printemps 2025 confirmé. Appel printemps 2026 attendu — vérifier le site du ministère.',
+    eligibility: 'BC-based organizations developing pre-commercial clean energy technology',
+    eligibilityFr: 'Organisations de C.-B. développant des technologies d\'énergie propre précommerciales',
+    description: 'Supports pre-commercial clean energy technology projects in BC. Since 2008, committed $114M+ to clean energy and efficiency programs. Priority: renewable energy, energy storage, and smart grid technologies.',
+    descriptionFr: 'Soutient les projets de technologies d\'énergie propre précommerciales en C.-B. Depuis 2008, engagement de plus de 114 M$.',
+    url: 'https://www2.gov.bc.ca/gov/content/industry/electricity-alternative-energy/clean-energy-fund',
+    urlFr: 'https://www2.gov.bc.ca/gov/content/industry/electricity-alternative-energy/clean-energy-fund',
+    notes: 'NRC IRAP and Innovate BC are partnering on the BC Fast Pilot program — watch for joint announcements.',
+    notesFr: 'NRC IRAP et Innovate BC s\'associent sur le programme BC Fast Pilot — surveillez les annonces conjointes.',
+  },
+  {
+    id: 'pacifican', provinces: ['BC'],
+    name: 'PacifiCan — Business Scale-up & Productivity', nameFr: 'PacifiCan — Croissance et productivité des entreprises',
+    funder: 'Pacific Economic Development Canada', funderFr: 'Développement économique Canada pour le Pacifique',
+    icon: '🌊', iconBg: '#f0f9ff',
+    maxAmount: 'Up to $5M', maxAmountFr: 'Jusqu\'à 5 M$',
+    status: 'rolling', tags: ['provincial','cleantech','ai','financing'],
+    deadline: 'Rolling — contact PacifiCan regional office', deadlineFr: 'Continu — contacter le bureau régional de PacifiCan',
+    window: 'Accepts applications on an ongoing basis. Processing time approximately 3–6 months.',
+    windowFr: 'Accepte les demandes en continu. Délai de traitement d\'environ 3 à 6 mois.',
+    eligibility: 'BC SMEs scaling up or improving productivity through innovation',
+    eligibilityFr: 'PME de C.-B. développant leur croissance ou améliorant leur productivité par l\'innovation',
+    description: 'Conditionally repayable contributions (not a pure grant — repay if project succeeds) for BC businesses scaling up in clean tech, AI, health, and digital economy. Strong fit for commercialization-stage companies.',
+    descriptionFr: 'Contributions remboursables conditionnellement pour les entreprises de C.-B. en croissance. À noter : remboursable si le projet réussit.',
+    url: 'https://www.pacifican.gc.ca/en/funding/bsp',
+    urlFr: 'https://www.pacifican.gc.ca/fr/financement/cpp',
+    notes: 'This is a conditionally repayable contribution — not a free grant. Must repay if project succeeds. Many sources incorrectly describe it as a grant.',
+    notesFr: 'Contribution remboursable conditionnellement — pas une subvention gratuite. Remboursement requis si le projet réussit.',
+  },
+
+  // ── ALBERTA ───────────────────────────────────────────────────────────────
+  {
+    id: 'alberta-innovates', provinces: ['AB'],
+    name: 'Alberta Innovates — Commercialization Support',
+    nameFr: 'Alberta Innovates — Soutien à la commercialisation',
+    funder: 'Alberta Innovates', funderFr: 'Alberta Innovates',
+    icon: '🏔️', iconBg: '#fefce8',
+    maxAmount: 'Up to $500K', maxAmountFr: 'Jusqu\'à 500 000 $',
+    status: 'open', tags: ['provincial','rd','ai','cleantech'],
+    deadline: 'Various streams — check AI site', deadlineFr: 'Divers volets — vérifier le site d\'Alberta Innovates',
+    window: 'Multiple intake windows throughout the year. Subscribe to Alberta Innovates newsletter for announcements.',
+    windowFr: 'Plusieurs fenêtres d\'accueil tout au long de l\'année. Abonnez-vous à l\'infolettre d\'Alberta Innovates.',
+    eligibility: 'Alberta-based companies moving technology from prototype to global market',
+    eligibilityFr: 'Entreprises albertaines faisant passer la technologie du prototype au marché mondial',
+    description: 'Alberta\'s provincial innovation agency provides direct commercialization grants, vouchers, and advisory support. Programs span AI, energy, agriculture, and health. Often stackable with ERA and federal SR&ED.',
+    descriptionFr: 'L\'agence d\'innovation provinciale de l\'Alberta fournit des subventions de commercialisation, des bons et du soutien. Souvent cumulables avec l\'ERA et le RS&DE fédéral.',
+    url: 'https://albertainnovates.ca/programs/',
+    urlFr: 'https://albertainnovates.ca/programs/',
+    notes: 'Alberta allows stacking: Alberta Innovates + ERA + federal SR&ED is a common combination that maximizes non-dilutive capital.',
+    notesFr: 'L\'Alberta permet le cumul : Alberta Innovates + ERA + RS&DE fédéral est une combinaison courante.',
+  },
+  {
+    id: 'era', provinces: ['AB'],
+    name: 'Emissions Reduction Alberta (ERA)', nameFr: 'Emissions Reduction Alberta (ERA)',
+    funder: 'Emissions Reduction Alberta', funderFr: 'Emissions Reduction Alberta',
+    icon: '🌱', iconBg: '#f0fdf4',
+    maxAmount: 'Up to $15M', maxAmountFr: 'Jusqu\'à 15 M$',
+    status: 'open', tags: ['provincial','cleantech','energy','rd'],
+    deadline: 'Intake rounds — check ERA site for current call', deadlineFr: 'Rondes d\'appels — vérifier le site ERA',
+    window: 'ERA runs 1–2 funding calls per year. Current call status: verify at eralberta.ca.',
+    windowFr: 'ERA lance 1 à 2 appels par an. Vérifiez l\'état actuel sur eralberta.ca.',
+    eligibility: 'Companies and research organizations in Alberta with clean technology projects reducing GHG emissions',
+    eligibilityFr: 'Entreprises et organismes de recherche en Alberta avec des projets de technologies propres réduisant les GES',
+    description: 'Funds clean technology development and deployment in Alberta. Priority areas: methane capture, carbon capture, energy efficiency, hydrogen, and renewable energy. Strong emphasis on measurable GHG reductions.',
+    descriptionFr: 'Finance le développement et le déploiement de technologies propres en Alberta. Priorités : capture du méthane, CUSC, efficacité énergétique, hydrogène et énergies renouvelables.',
+    url: 'https://eralberta.ca/funding/',
+    urlFr: 'https://eralberta.ca/funding/',
+    notes: 'ERA is particularly active for energy transition and industrial decarbonization. Alberta companies should monitor ERA as a primary cleantech funding source.',
+    notesFr: 'ERA est particulièrement active pour la transition énergétique et la décarbonisation industrielle. Les entreprises albertaines devraient surveiller ERA comme source principale.',
+  },
+  {
+    id: 'hydrogen-ab', provinces: ['AB'],
+    name: 'Alberta Hydrogen Centre of Excellence', nameFr: 'Centre d\'excellence en hydrogène de l\'Alberta',
+    funder: 'Government of Alberta', funderFr: 'Gouvernement de l\'Alberta',
+    icon: '⚗️', iconBg: '#f0f9ff',
+    maxAmount: 'Program-specific', maxAmountFr: 'Spécifique au programme',
+    status: 'closing', tags: ['provincial','cleantech','energy'],
+    deadline: 'Services Capacity Program: applications accepted until Mar 31, 2026', deadlineFr: 'Programme de capacité de services : demandes acceptées jusqu\'au 31 mars 2026',
+    window: 'Services Capacity Program open until March 31, 2026. Future streams expected — monitor alberta.ca.',
+    windowFr: 'Programme de capacité de services ouvert jusqu\'au 31 mars 2026. Futurs volets attendus.',
+    eligibility: 'Companies developing hydrogen technologies relevant to Alberta\'s energy system',
+    eligibilityFr: 'Entreprises développant des technologies hydrogène pertinentes pour le système énergétique de l\'Alberta',
+    description: 'Funds hydrogen production, deployment, and awareness projects. Supports integration of clean hydrogen into Alberta\'s domestic energy system and positions Alberta as a global clean energy exporter.',
+    descriptionFr: 'Finance les projets de production, de déploiement et de sensibilisation à l\'hydrogène. Soutient l\'intégration de l\'hydrogène propre dans le système énergétique de l\'Alberta.',
+    url: 'https://www.alberta.ca/hydrogen-centre-of-excellence.aspx',
+    urlFr: 'https://www.alberta.ca/hydrogen-centre-of-excellence.aspx',
+    notes: 'Niche but valuable for companies in the hydrogen value chain. The Services Capacity Program deadline is imminent — act quickly.',
+    notesFr: 'Niche mais précieux pour les entreprises dans la chaîne de valeur de l\'hydrogène. La date limite est imminente.',
+  },
+
+  // ── SASKATCHEWAN ─────────────────────────────────────────────────────────
+  {
+    id: 'saif', provinces: ['SK'],
+    name: 'Saskatchewan Advantage Innovation Fund (SAIF)',
+    nameFr: 'Fonds d\'innovation avantage Saskatchewan (SAIF)',
+    funder: 'Innovation Saskatchewan', funderFr: 'Innovation Saskatchewan',
+    icon: '🌾', iconBg: '#fefce8',
+    maxAmount: 'Up to $500K', maxAmountFr: 'Jusqu\'à 500 000 $',
+    status: 'open', tags: ['provincial','rd','cleantech','ai'],
+    deadline: 'Intake windows — check Innovation SK site', deadlineFr: 'Fenêtres d\'accueil — vérifier le site d\'Innovation SK',
+    window: 'Periodic intake windows — Saskatchewan windows can close without warning. Check innovationsask.ca regularly.',
+    windowFr: 'Fenêtres périodiques — les fenêtres en Saskatchewan peuvent fermer sans avertissement. Vérifiez régulièrement.',
+    eligibility: 'Saskatchewan companies or academic/industry partnerships working on innovation projects',
+    eligibilityFr: 'Entreprises de Saskatchewan ou partenariats académiques/industriels travaillant sur des projets d\'innovation',
+    description: 'Supports R&D, commercialization, and productivity projects in Saskatchewan. Relevant for cleantech, agri-food tech, and AI applications in resource industries.',
+    descriptionFr: 'Soutient les projets de R&D, de commercialisation et de productivité en Saskatchewan. Pertinent pour les technologies propres, agro-alimentaires et IA.',
+    url: 'https://www.innovationsask.ca/programs/saif',
+    urlFr: 'https://www.innovationsask.ca/programs/saif',
+    notes: 'Saskatchewan intake windows can open and close quickly — set a calendar reminder to check the site monthly.',
+    notesFr: 'Les fenêtres d\'accueil en Saskatchewan peuvent s\'ouvrir et se fermer rapidement — vérifiez le site mensuellement.',
+  },
+  {
+    id: 'prairiesca-sk', provinces: ['SK'],
+    name: 'PrairiesCan — Business Scale-up & Productivity',
+    nameFr: 'PrairiesCan — Croissance et productivité des entreprises',
+    funder: 'Prairies Economic Development Canada', funderFr: 'Développement économique Canada pour les Prairies',
+    icon: '🌾', iconBg: '#f0f9ff',
+    maxAmount: 'Up to $5M', maxAmountFr: 'Jusqu\'à 5 M$',
+    status: 'rolling', tags: ['provincial','cleantech','ai','financing'],
+    deadline: 'Rolling — contact PrairiesCan office', deadlineFr: 'Continu — contacter le bureau de PrairiesCan',
+    window: 'Rolling intake. PrairiesCan offices in Saskatoon and Regina.',
+    windowFr: 'Accueil continu. Bureaux de PrairiesCan à Saskatoon et Regina.',
+    eligibility: 'Saskatchewan SMEs scaling up or improving productivity through technology',
+    eligibilityFr: 'PME de Saskatchewan développant leur croissance par la technologie',
+    description: 'Federal regional development agency for AB, SK, and MB. Conditionally repayable contributions for scaling and productivity. AI integration in industrial value chains is a current priority.',
+    descriptionFr: 'Agence fédérale de développement régional pour AB, SK et MB. Contributions remboursables conditionnellement pour la croissance.',
+    url: 'https://www.prairiescanecon.gc.ca/en/funding-opportunities/business-scale-up-and-productivity',
+    urlFr: 'https://www.prairiescanecon.gc.ca/fr/possibilites-de-financement/croissance-et-productivite-des-entreprises',
+    notes: 'Repayable if project succeeds — budget accordingly. Strong for AI adoption in agri-food and industrial sectors.',
+    notesFr: 'Remboursable si le projet réussit. Fort pour l\'adoption de l\'IA dans les secteurs agroalimentaire et industriel.',
+  },
+
+  // ── MANITOBA ──────────────────────────────────────────────────────────────
+  {
+    id: 'igp-mb', provinces: ['MB'],
+    name: 'Manitoba Innovation Growth Program (IGP)',
+    nameFr: 'Programme de croissance par l\'innovation du Manitoba (PCI)',
+    funder: 'Economic Development Manitoba', funderFr: 'Développement économique Manitoba',
+    icon: '🦌', iconBg: '#f0fdf4',
+    maxAmount: 'Up to $500K', maxAmountFr: 'Jusqu\'à 500 000 $',
+    status: 'open', tags: ['provincial','rd','cleantech','ai'],
+    deadline: 'Rolling intake', deadlineFr: 'Acceptation continue',
+    window: 'Rolling intake. Contact Economic Development Manitoba for pre-application consultation.',
+    windowFr: 'Accueil continu. Contactez Développement économique Manitoba pour une consultation préalable.',
+    eligibility: 'Manitoba-based companies with R&D or commercialization projects',
+    eligibilityFr: 'Entreprises manitobaines avec des projets de R&D ou de commercialisation',
+    description: 'Supports R&D and commercialization activities for Manitoba companies. Relevant for cleantech, AI, and manufacturing technology. Often complemented by federal programs.',
+    descriptionFr: 'Soutient les activités de R&D et de commercialisation pour les entreprises manitobaines.',
+    url: 'https://www.gov.mb.ca/jec/busdev/financial/igp.html',
+    urlFr: 'https://www.gov.mb.ca/jec/busdev/financial/igp.html',
+    notes: 'Manitoba has been expanding climate-focused streams — projects in sustainable energy or water management are well-positioned.',
+    notesFr: 'Le Manitoba a élargi ses volets axés sur le climat — les projets en énergie durable sont bien positionnés.',
+  },
+  {
+    id: 'research-mb', provinces: ['MB'],
+    name: 'Research Manitoba — Industry Partnership', nameFr: 'Recherche Manitoba — Partenariat industriel',
+    funder: 'Research Manitoba', funderFr: 'Recherche Manitoba',
+    icon: '🔬', iconBg: '#faf5ff',
+    maxAmount: 'Up to $200K', maxAmountFr: 'Jusqu\'à 200 000 $',
+    status: 'open', tags: ['provincial','rd','ai'],
+    deadline: 'Intake-specific — check Research Manitoba site', deadlineFr: 'Spécifique à l\'appel — vérifier le site de Recherche Manitoba',
+    window: 'Multiple intakes per year. Check researchmanitoba.ca for current open calls.',
+    windowFr: 'Plusieurs appels par année. Vérifiez researchmanitoba.ca pour les appels ouverts.',
+    eligibility: 'Manitoba companies partnering with Manitoba post-secondary institutions',
+    eligibilityFr: 'Entreprises manitobaines en partenariat avec des établissements postsecondaires du Manitoba',
+    description: 'Supports industry-academic partnerships for applied research in Manitoba. Best for companies that can partner with University of Manitoba, University of Winnipeg, or Red River College.',
+    descriptionFr: 'Soutient les partenariats industrie-académie pour la recherche appliquée au Manitoba.',
+    url: 'https://www.researchmanitoba.ca/funding/',
+    urlFr: 'https://www.researchmanitoba.ca/funding/',
+    notes: 'Stack with Mitacs Accelerate for maximum research capacity.',
+    notesFr: 'Cumuler avec Mitacs Accélération pour une capacité de recherche maximale.',
+  },
+
+  // ── ONTARIO ───────────────────────────────────────────────────────────────
+  {
+    id: 'oci', provinces: ['ON'],
+    name: 'Ontario Centres of Innovation (OCI) — Vouchers',
+    nameFr: 'Centres d\'innovation de l\'Ontario (CIO) — Bons',
+    funder: 'Ontario Centres of Innovation', funderFr: 'Centres d\'innovation de l\'Ontario',
+    icon: '🏙️', iconBg: '#eff6ff',
+    maxAmount: 'Up to $500K', maxAmountFr: 'Jusqu\'à 500 000 $',
+    status: 'open', tags: ['provincial','rd','ai','cleantech'],
+    deadline: 'Rolling intake', deadlineFr: 'Acceptation continue',
+    window: 'Open year-round. OCI advisors available across Ontario — contact your regional office.',
+    windowFr: 'Ouvert toute l\'année. Conseillers OCI disponibles partout en Ontario.',
+    eligibility: 'Ontario-based companies partnering with colleges or universities on R&D',
+    eligibilityFr: 'Entreprises ontariennes en partenariat avec des collèges ou universités pour la R&D',
+    description: 'Voucher-based funding for industry-academic R&D collaborations. Programs include Market Readiness, Vouchers for Innovation and Productivity (VIP), and digital transformation support. Strong for AI and cleantech companies.',
+    descriptionFr: 'Financement par bons pour les collaborations R&D industrie-académie. Programmes incluant la préparation au marché et la transformation numérique.',
+    url: 'https://www.oc-innovation.ca/programs/',
+    urlFr: 'https://www.oc-innovation.ca/programmes/',
+    notes: 'OCI is a strong complement to NRC IRAP and SR&ED. Ontario companies should treat it as part of their standard funding stack.',
+    notesFr: 'OCI est un excellent complément à PARI CNRC et RS&DE. Les entreprises ontariennes devraient l\'intégrer à leur stratégie.',
+  },
+  {
+    id: 'invest-ontario', provinces: ['ON'],
+    name: 'Invest Ontario Fund', nameFr: 'Fonds Investissez en Ontario',
+    funder: 'Invest Ontario', funderFr: 'Investissez en Ontario',
+    icon: '🏙️', iconBg: '#eff6ff',
+    maxAmount: 'No maximum stated', maxAmountFr: 'Aucun maximum déclaré',
+    status: 'open', tags: ['provincial','cleantech','ai','financing'],
+    deadline: 'Rolling — direct application to Invest Ontario', deadlineFr: 'Continu — demande directe à Investissez en Ontario',
+    window: 'Rolling. $600M top-up announced in 2025 Ontario Budget increases available capital.',
+    windowFr: 'Continu. Bonification de 600 M$ annoncée dans le budget 2025 de l\'Ontario.',
+    eligibility: 'Companies making significant private sector investments in Ontario — manufacturing, tech, life sciences',
+    eligibilityFr: 'Entreprises effectuant des investissements significatifs en Ontario — fabrication, technologie, sciences de la vie',
+    description: 'Loan or conditional grant combination for large-scale private investment in Ontario. No stated maximum. $400M original commitment topped up with $600M in 2025 Ontario Budget. Focus on job creation and economic development.',
+    descriptionFr: 'Combinaison prêt/subvention conditionnelle pour les investissements privés à grande échelle en Ontario. Engagement original de 400 M$ bonifié de 600 M$ en 2025.',
+    url: 'https://www.investontario.ca/',
+    urlFr: 'https://www.investontario.ca/',
+    notes: 'Best suited for companies making large capital investments ($10M+) in Ontario. Not for early-stage startups.',
+    notesFr: 'Mieux adapté aux entreprises effectuant d\'importants investissements en capital (10 M$+) en Ontario.',
+  },
+  {
+    id: 'feddev', provinces: ['ON'],
+    name: 'FedDev Ontario — Business Scale-up & Productivity',
+    nameFr: 'FedDev Ontario — Croissance et productivité des entreprises',
+    funder: 'Federal Economic Development Agency for Southern Ontario', funderFr: 'Agence fédérale de développement économique pour le Sud de l\'Ontario',
+    icon: '🏙️', iconBg: '#f0f9ff',
+    maxAmount: 'Up to $10M', maxAmountFr: 'Jusqu\'à 10 M$',
+    status: 'rolling', tags: ['provincial','cleantech','ai','financing'],
+    deadline: 'Rolling — contact FedDev regional office', deadlineFr: 'Continu — contacter le bureau régional de FedDev',
+    window: 'Rolling intake. FedDev offices in Toronto, Waterloo, and Ottawa.',
+    windowFr: 'Accueil continu. Bureaux FedDev à Toronto, Waterloo et Ottawa.',
+    eligibility: 'Southern Ontario SMEs scaling up or improving productivity',
+    eligibilityFr: 'PME du Sud de l\'Ontario développant leur croissance ou leur productivité',
+    description: 'Federal regional development for Southern Ontario. Conditionally repayable contributions for scaling, productivity, and market expansion. AI integration and cleantech commercialization are current priorities.',
+    descriptionFr: 'Développement régional fédéral pour le Sud de l\'Ontario. Contributions remboursables conditionnellement pour la croissance.',
+    url: 'https://www.feddevontario.gc.ca/eic/site/723.nsf/eng/home',
+    urlFr: 'https://www.feddevontario.gc.ca/eic/site/723.nsf/fra/accueil',
+    notes: 'Note: Northern Ontario has a separate program (FedNor). FedDev covers the southern corridor.',
+    notesFr: 'À noter : le Nord de l\'Ontario bénéficie d\'un programme distinct (FedNor). FedDev couvre le corridor sud.',
+  },
+  {
+    id: 'ontario-itc', provinces: ['ON'],
+    name: 'Ontario Innovation Tax Credit (OITC)', nameFr: 'Crédit d\'impôt à l\'innovation de l\'Ontario (CIIO)',
+    funder: 'Ontario Ministry of Finance', funderFr: 'Ministère des Finances de l\'Ontario',
+    icon: '🧪', iconBg: '#fff7ed',
+    maxAmount: '8% refundable tax credit', maxAmountFr: 'Crédit d\'impôt remboursable de 8 %',
+    status: 'rolling', tags: ['provincial','rd','ai'],
+    deadline: 'Filed with annual Ontario tax return', deadlineFr: 'Soumis avec la déclaration de revenus ontarienne',
+    window: 'Ongoing — file with annual tax return. Stack with federal SR&ED for maximum benefit.',
+    windowFr: 'Continu — soumis avec la déclaration annuelle. Cumuler avec RS&DE fédéral pour un avantage maximal.',
+    eligibility: 'Ontario-based CCPCs conducting eligible R&D expenditures',
+    eligibilityFr: 'SPCC ontariennes effectuant des dépenses de R&D admissibles',
+    description: 'Ontario\'s provincial R&D tax credit — 8% refundable credit on eligible expenditures. Stacks with federal SR&ED. Together, Ontario-based CCPCs can receive up to 43% effective credit rate on R&D.',
+    descriptionFr: 'Crédit d\'impôt provincial R&D de l\'Ontario — 8 % remboursable. Cumulé avec le RS&DE fédéral, les SPCC ontariennes peuvent recevoir un taux effectif allant jusqu\'à 43 %.',
+    url: 'https://www.ontario.ca/page/ontario-innovation-tax-credit',
+    urlFr: 'https://www.ontario.ca/fr/page/credit-dimpot-a-linnovation-de-lontario',
+    notes: 'Stack with federal SR&ED immediately — this combination is one of the most effective R&D incentives in the country.',
+    notesFr: 'Cumuler immédiatement avec le RS&DE fédéral — cette combinaison est l\'une des plus efficaces au pays.',
+  },
+
+  // ── QUÉBEC ────────────────────────────────────────────────────────────────
+  {
+    id: 'iq-tech', provinces: ['QC'],
+    name: 'Investissement Québec — Tech & AI', nameFr: 'Investissement Québec — Technologies et IA',
+    funder: 'Investissement Québec', funderFr: 'Investissement Québec',
+    icon: '🔷', iconBg: '#fdf2f8',
+    maxAmount: 'Variable', maxAmountFr: 'Variable',
+    status: 'rolling', tags: ['provincial','ai','cleantech','financing'],
+    deadline: 'Rolling — apply via investquebec.com', deadlineFr: 'Continu — demande via investquebec.com',
+    window: 'Open year-round. IQ is typically the first call for Quebec startups — they can help stack multiple programs.',
+    windowFr: 'Ouvert toute l\'année. IQ est généralement le premier appel pour les startups québécoises.',
+    eligibility: 'Quebec-based companies in tech, AI, or cleantech requiring growth financing',
+    eligibilityFr: 'Entreprises québécoises en technologie, IA ou technologies propres nécessitant du financement de croissance',
+    description: 'Quebec\'s economic development crown corporation offers loans, loan guarantees, equity, and advisory services. Often co-invests alongside private investors. Key access point for stacking multiple Quebec and federal programs.',
+    descriptionFr: 'La société d\'État de développement économique du Québec offre des prêts, des garanties, des capitaux propres et des services-conseils. Co-investit souvent avec des investisseurs privés.',
+    url: 'https://www.investquebec.com/quebec/en/financial-products/smes-and-large-corporations',
+    urlFr: 'https://www.investquebec.com/quebec/fr/produits-financiers/pme-et-grandes-entreprises.html',
+    notes: 'IQ is the gateway to Quebec\'s funding ecosystem — engage them early to map the full provincial stack.',
+    notesFr: 'IQ est la porte d\'entrée vers l\'écosystème de financement du Québec — engagez-les tôt pour cartographier le cumul provincial.',
+  },
+  {
+    id: 'teq', provinces: ['QC'],
+    name: 'Transition énergétique Québec (TEQ)', nameFr: 'Transition énergétique Québec (TEQ)',
+    funder: 'Gouvernement du Québec', funderFr: 'Gouvernement du Québec',
+    icon: '🌿', iconBg: '#f0fdf4',
+    maxAmount: 'Up to $5M', maxAmountFr: 'Jusqu\'à 5 M$',
+    status: 'open', tags: ['provincial','cleantech','energy'],
+    deadline: 'Program-specific — check TEQ site', deadlineFr: 'Spécifique au programme — vérifier le site TEQ',
+    window: 'Multiple active programs. Some streams rolling, others have annual calls. Check transitionenergetique.gouv.qc.ca.',
+    windowFr: 'Plusieurs programmes actifs. Certains volets sont continus, d\'autres ont des appels annuels.',
+    eligibility: 'Quebec organizations working on energy efficiency and renewable energy transition',
+    eligibilityFr: 'Organisations québécoises travaillant sur l\'efficacité énergétique et la transition énergétique',
+    description: 'Quebec\'s energy transition agency manages funding for efficiency, electrification, and renewables. Directly aligned with Quebec\'s 2030 Energy Plan targets. Relevant for companies whose products enable building or industrial decarbonization.',
+    descriptionFr: 'L\'agence de transition énergétique du Québec gère le financement pour l\'efficacité, l\'électrification et les énergies renouvelables. Aligné avec le Plan énergétique 2030.',
+    url: 'https://transitionenergetique.gouv.qc.ca/en',
+    urlFr: 'https://transitionenergetique.gouv.qc.ca/fr',
+    notes: 'TEQ programs often stack with federal programs. A TEQ advisor can help identify the right combination for your project.',
+    notesFr: 'Les programmes TEQ se cumulent souvent avec les programmes fédéraux. Un conseiller TEQ peut aider à identifier la bonne combinaison.',
+  },
+  {
+    id: 'cdae-qc', provinces: ['QC'],
+    name: 'CDAE — Tax Credit for Digital Business Development',
+    nameFr: 'CDAE — Crédit d\'impôt pour le développement des affaires électroniques',
+    funder: 'Revenu Québec', funderFr: 'Revenu Québec',
+    icon: '💻', iconBg: '#faf5ff',
+    maxAmount: '30% tax credit', maxAmountFr: 'Crédit d\'impôt de 30 %',
+    status: 'rolling', tags: ['provincial','ai','rd'],
+    deadline: 'Filed with annual Quebec corporate tax return', deadlineFr: 'Soumis avec la déclaration de revenus d\'entreprise québécoise',
+    window: 'Ongoing — file with annual tax return. Highly relevant for AI and digital technology companies in Quebec.',
+    windowFr: 'Continu — soumis avec la déclaration annuelle. Très pertinent pour les entreprises d\'IA et de technologie numérique au Québec.',
+    eligibility: 'Quebec corporations whose employees work on eligible digital or AI activities',
+    eligibilityFr: 'Sociétés québécoises dont les employés travaillent sur des activités numériques ou d\'IA admissibles',
+    description: 'Quebec\'s digital sector tax credit — 30% refundable credit on eligible employee salaries for companies in digital technology and AI. Can be stacked with federal SR&ED for significant combined benefit.',
+    descriptionFr: 'Crédit d\'impôt québécois pour le secteur numérique — 30 % remboursable sur les salaires admissibles pour les entreprises en technologie numérique et IA. Cumulable avec le RS&DE fédéral.',
+    url: 'https://www.revenuquebec.ca/en/businesses/tax-credits/cdae/',
+    urlFr: 'https://www.revenuquebec.ca/fr/entreprises/credits-dimpot/cdae/',
+    notes: 'Highly underutilized by AI and SaaS companies. If you have developers or AI researchers in Quebec, this should be in your standard financing stack.',
+    notesFr: 'Très sous-utilisé par les entreprises d\'IA et SaaS. Si vous avez des développeurs ou des chercheurs en IA au Québec, ce crédit devrait faire partie de votre stratégie.',
+  },
+  {
+    id: 'recyc-qc', provinces: ['QC'],
+    name: 'RECYC-QUÉBEC Innovation Fund', nameFr: 'Fonds d\'innovation RECYC-QUÉBEC',
+    funder: 'RECYC-QUÉBEC', funderFr: 'RECYC-QUÉBEC',
+    icon: '♻️', iconBg: '#faf5ff',
+    maxAmount: 'Up to $1M', maxAmountFr: 'Jusqu\'à 1 M$',
+    status: 'open', tags: ['provincial','cleantech'],
+    deadline: 'Annual call for projects — check site', deadlineFr: 'Appel annuel à projets — vérifier le site',
+    window: 'Annual intake, typically spring. Check recyc-quebec.gouv.qc.ca for current call status.',
+    windowFr: 'Appel annuel, typiquement au printemps. Vérifiez recyc-quebec.gouv.qc.ca pour l\'état actuel.',
+    eligibility: 'Quebec companies developing circular economy, waste reduction, or material recovery technologies',
+    eligibilityFr: 'Entreprises québécoises développant des technologies d\'économie circulaire ou de récupération des matières',
+    description: 'Supports innovation contributing to Quebec\'s circular economy goals. Relevant for companies working on material efficiency or sustainable materials in the built environment.',
+    descriptionFr: 'Soutient les innovations contribuant aux objectifs d\'économie circulaire du Québec.',
+    url: 'https://www.recyc-quebec.gouv.qc.ca/entreprises-organismes/mieux-gerer/appels-projets-innovation',
+    urlFr: 'https://www.recyc-quebec.gouv.qc.ca/entreprises-organismes/mieux-gerer/appels-projets-innovation',
+    notes: 'Niche — most relevant for companies with a material recovery or circular economy component.',
+    notesFr: 'Niche — le plus pertinent pour les entreprises ayant une composante d\'économie circulaire.',
+  },
+
+  // ── NEW BRUNSWICK ─────────────────────────────────────────────────────────
+  {
+    id: 'acoa-nb', provinces: ['NB'],
+    name: 'ACOA — Business Development Program', nameFr: 'APECA — Programme de développement des entreprises',
+    funder: 'Atlantic Canada Opportunities Agency', funderFr: 'Agence de promotion économique du Canada atlantique',
+    icon: '🌊', iconBg: '#f0f9ff',
+    maxAmount: 'Up to $2M', maxAmountFr: 'Jusqu\'à 2 M$',
+    status: 'rolling', tags: ['provincial','cleantech','ai','rd'],
+    deadline: 'Rolling — contact ACOA NB office', deadlineFr: 'Continu — contacter le bureau APECA du N.-B.',
+    window: 'Rolling intake. ACOA offices in Fredericton, Moncton, and Saint John.',
+    windowFr: 'Accueil continu. Bureaux APECA à Fredericton, Moncton et Saint-Jean.',
+    eligibility: 'NB-based SMEs with innovation, scale-up, or productivity projects',
+    eligibilityFr: 'PME du N.-B. avec des projets d\'innovation, de croissance ou de productivité',
+    description: 'ACOA is the primary federal economic development agency for Atlantic Canada. Supports cleantech and AI adoption for SMEs. Focus on SME adoption of clean technologies and market diversification.',
+    descriptionFr: 'APECA est la principale agence fédérale de développement économique pour le Canada atlantique. Soutient l\'adoption des technologies propres et de l\'IA par les PME.',
+    url: 'https://www.acoa-apeca.gc.ca/en/Pages/home.aspx',
+    urlFr: 'https://www.acoa-apeca.gc.ca/fr/Pages/home.aspx',
+    notes: 'ACOA serves all four Atlantic provinces. NB, NS, PE, and NL companies should all consider ACOA as part of their standard funding stack.',
+    notesFr: 'APECA dessert les quatre provinces atlantiques. Les entreprises du N.-B., N.-É., Î.-P.-É. et T.-N.-L. devraient toutes considérer APECA.',
+  },
+  {
+    id: 'nbif', provinces: ['NB'],
+    name: 'New Brunswick Innovation Foundation (NBIF)',
+    nameFr: 'Fondation de l\'innovation du Nouveau-Brunswick (FINB)',
+    funder: 'NBIF', funderFr: 'FINB',
+    icon: '🔬', iconBg: '#faf5ff',
+    maxAmount: 'Up to $1M', maxAmountFr: 'Jusqu\'à 1 M$',
+    status: 'open', tags: ['provincial','rd','ai','cleantech'],
+    deadline: 'Multiple intakes per year — check NBIF.ca', deadlineFr: 'Plusieurs appels par année — vérifier NBIF.ca',
+    window: 'Multiple intakes annually. NBIF posts intake windows on nbif.ca — subscribe to newsletter.',
+    windowFr: 'Plusieurs appels annuellement. NBIF publie les fenêtres d\'accueil sur nbif.ca.',
+    eligibility: 'NB companies or academic-industry partnerships working on R&D with commercial potential',
+    eligibilityFr: 'Entreprises du N.-B. ou partenariats académiques-industriels travaillant sur la R&D',
+    description: 'New Brunswick\'s primary provincial innovation funder. Supports R&D with commercial potential across all sectors. Offers research funding and entrepreneur-in-residence programs.',
+    descriptionFr: 'Principal bailleur de fonds provincial en innovation du Nouveau-Brunswick. Soutient la R&D à potentiel commercial dans tous les secteurs.',
+    url: 'https://www.nbif.ca/en/programs/',
+    urlFr: 'https://www.nbif.ca/fr/programmes/',
+    notes: 'NBIF is the first call for NB innovation companies. Engage their team early — they can help identify additional funding sources.',
+    notesFr: 'NBIF est le premier appel pour les entreprises d\'innovation au N.-B. Engagez leur équipe tôt.',
+  },
+
+  // ── NOVA SCOTIA ───────────────────────────────────────────────────────────
+  {
+    id: 'efficiency-ns', provinces: ['NS'],
+    name: 'Efficiency Nova Scotia — Business Programs',
+    nameFr: 'Efficiency Nova Scotia — Programmes entreprises',
+    funder: 'Efficiency Nova Scotia', funderFr: 'Efficiency Nova Scotia',
+    icon: '💡', iconBg: '#f0fdf4',
+    maxAmount: 'Up to $500K', maxAmountFr: 'Jusqu\'à 500 000 $',
+    status: 'open', tags: ['provincial','energy','cleantech'],
+    deadline: 'Rolling — apply via efficiencyns.ca', deadlineFr: 'Continu — demande via efficiencyns.ca',
+    window: 'Open year-round. Programs for energy efficiency retrofits, renewable energy, and building upgrades.',
+    windowFr: 'Ouvert toute l\'année. Programmes pour l\'efficacité énergétique, les énergies renouvelables et les rénovations.',
+    eligibility: 'Nova Scotia businesses undertaking energy efficiency or clean energy projects',
+    eligibilityFr: 'Entreprises de Nouvelle-Écosse réalisant des projets d\'efficacité énergétique ou d\'énergie propre',
+    description: 'NS has the highest provincial grid emission factor in Canada (0.57 kg CO₂/kWh) — making energy efficiency funding particularly valuable. ENS offers rebates, incentives, and technical support for commercial buildings and industry.',
+    descriptionFr: 'La N.-É. a le facteur d\'émissions de réseau le plus élevé au Canada — ce qui rend le financement de l\'efficacité énergétique particulièrement précieux.',
+    url: 'https://www.efficiencyns.ca/business/',
+    urlFr: 'https://www.efficiencyns.ca/business/',
+    notes: 'NS grid intensity makes efficiency upgrades especially impactful on carbon metrics — leverage this in grant applications.',
+    notesFr: 'L\'intensité du réseau de la N.-É. rend les améliorations d\'efficacité particulièrement impactantes sur les métriques carbone.',
+  },
+  {
+    id: 'acoa-ns', provinces: ['NS'],
+    name: 'ACOA — Business Development Program (NS)',
+    nameFr: 'APECA — Programme de développement des entreprises (N.-É.)',
+    funder: 'Atlantic Canada Opportunities Agency', funderFr: 'Agence de promotion économique du Canada atlantique',
+    icon: '🌊', iconBg: '#f0f9ff',
+    maxAmount: 'Up to $2M', maxAmountFr: 'Jusqu\'à 2 M$',
+    status: 'rolling', tags: ['provincial','cleantech','ai','rd'],
+    deadline: 'Rolling — contact ACOA NS office (Halifax)', deadlineFr: 'Continu — contacter le bureau APECA de la N.-É. (Halifax)',
+    window: 'Rolling intake. ACOA Halifax office serves Nova Scotia companies.',
+    windowFr: 'Accueil continu. Le bureau APECA de Halifax dessert les entreprises de Nouvelle-Écosse.',
+    eligibility: 'NS-based SMEs with innovation, scale-up, or productivity projects',
+    eligibilityFr: 'PME de N.-É. avec des projets d\'innovation, de croissance ou de productivité',
+    description: 'Federal regional development for Nova Scotia. AI adoption with focus on traditional and emerging sectors including ocean tech, fisheries, and clean energy. Often co-invests with provincial programs.',
+    descriptionFr: 'Développement régional fédéral pour la Nouvelle-Écosse. Adoption de l\'IA axée sur les secteurs traditionnels et émergents.',
+    url: 'https://www.acoa-apeca.gc.ca/en/Pages/home.aspx',
+    urlFr: 'https://www.acoa-apeca.gc.ca/fr/Pages/home.aspx',
+    notes: 'ACOA serves all Atlantic provinces — same program, regional offices provide province-specific guidance.',
+    notesFr: 'APECA dessert toutes les provinces atlantiques — même programme, les bureaux régionaux fournissent des conseils spécifiques.',
+  },
+
+  // ── PRINCE EDWARD ISLAND ─────────────────────────────────────────────────
+  {
+    id: 'acoa-pe', provinces: ['PE'],
+    name: 'ACOA — Business Development Program (PEI)',
+    nameFr: 'APECA — Programme de développement des entreprises (Î.-P.-É.)',
+    funder: 'Atlantic Canada Opportunities Agency', funderFr: 'Agence de promotion économique du Canada atlantique',
+    icon: '🏝️', iconBg: '#f0f9ff',
+    maxAmount: 'Up to $2M', maxAmountFr: 'Jusqu\'à 2 M$',
+    status: 'rolling', tags: ['provincial','cleantech','ai','rd'],
+    deadline: 'Rolling — contact ACOA PEI office (Charlottetown)', deadlineFr: 'Continu — contacter le bureau APECA de l\'Î.-P.-É. (Charlottetown)',
+    window: 'Rolling intake. ACOA Charlottetown office serves PEI companies.',
+    windowFr: 'Accueil continu. Le bureau APECA de Charlottetown dessert les entreprises de l\'Î.-P.-É.',
+    eligibility: 'PEI-based SMEs with innovation, scale-up, or productivity projects',
+    eligibilityFr: 'PME de l\'Î.-P.-É. avec des projets d\'innovation, de croissance ou de productivité',
+    description: 'Federal regional development for PEI. Supports cleantech, AI, and productivity projects. PEI has high electricity rates ($0.175/kWh) — energy efficiency projects have strong ROI for business.',
+    descriptionFr: 'Développement régional fédéral pour l\'Î.-P.-É. Soutient les technologies propres, l\'IA et les projets de productivité.',
+    url: 'https://www.acoa-apeca.gc.ca/en/Pages/home.aspx',
+    urlFr: 'https://www.acoa-apeca.gc.ca/fr/Pages/home.aspx',
+    notes: 'PEI has high electricity rates and a small business ecosystem — energy efficiency and cleantech have strong business cases here.',
+    notesFr: 'L\'Î.-P.-É. a des tarifs d\'électricité élevés — les projets d\'efficacité énergétique ont une solide justification commerciale.',
+  },
+  {
+    id: 'efficiency-pe', provinces: ['PE'],
+    name: 'EfficiencyPEI — Commercial Programs', nameFr: 'EfficiencyPEI — Programmes commerciaux',
+    funder: 'EfficiencyPEI', funderFr: 'EfficiencyPEI',
+    icon: '💡', iconBg: '#f0fdf4',
+    maxAmount: 'Rebate-based, varies', maxAmountFr: 'Basé sur les rabais, variable',
+    status: 'open', tags: ['provincial','energy','cleantech'],
+    deadline: 'Rolling — apply via efficiencypei.ca', deadlineFr: 'Continu — demande via efficiencypei.ca',
+    window: 'Open year-round. Rebate-based programs for energy efficiency upgrades in commercial buildings.',
+    windowFr: 'Ouvert toute l\'année. Programmes de rabais pour les améliorations d\'efficacité énergétique commerciale.',
+    eligibility: 'PEI businesses undertaking energy efficiency upgrades',
+    eligibilityFr: 'Entreprises de l\'Î.-P.-É. réalisant des améliorations d\'efficacité énergétique',
+    description: 'Rebates and incentives for energy efficiency upgrades in commercial buildings. Covers LED lighting, HVAC, insulation, and controls. Best for companies with a physical presence in PEI.',
+    descriptionFr: 'Rabais et incitatifs pour les améliorations d\'efficacité énergétique dans les bâtiments commerciaux.',
+    url: 'https://www.efficiencypei.ca/business',
+    urlFr: 'https://www.efficiencypei.ca/business',
+    notes: 'Smaller ticket sizes but straightforward applications — good entry point for early-stage businesses.',
+    notesFr: 'Montants plus petits mais demandes simples — bon point d\'entrée pour les entreprises en démarrage.',
+  },
+
+  // ── NEWFOUNDLAND ─────────────────────────────────────────────────────────
+  {
+    id: 'acoa-nl', provinces: ['NL'],
+    name: 'ACOA — Business Development Program (NL)',
+    nameFr: 'APECA — Programme de développement des entreprises (T.-N.-L.)',
+    funder: 'Atlantic Canada Opportunities Agency', funderFr: 'Agence de promotion économique du Canada atlantique',
+    icon: '🦌', iconBg: '#f0f9ff',
+    maxAmount: 'Up to $2M', maxAmountFr: 'Jusqu\'à 2 M$',
+    status: 'rolling', tags: ['provincial','cleantech','ai','rd'],
+    deadline: 'Rolling — contact ACOA NL office (St. John\'s)', deadlineFr: 'Continu — contacter le bureau APECA de T.-N.-L. (St. John\'s)',
+    window: 'Rolling intake. ACOA St. John\'s office serves NL companies.',
+    windowFr: 'Accueil continu. Le bureau APECA de St. John\'s dessert les entreprises de T.-N.-L.',
+    eligibility: 'NL-based SMEs with innovation, scale-up, or productivity projects',
+    eligibilityFr: 'PME de T.-N.-L. avec des projets d\'innovation, de croissance ou de productivité',
+    description: 'Federal regional development for Newfoundland & Labrador. Strong focus on ocean technology, offshore energy, and emerging cleantech. NL\'s hydroelectric resources make it well-positioned for clean energy innovation.',
+    descriptionFr: 'Développement régional fédéral pour T.-N.-L. Focus sur la technologie océanique, l\'énergie extracôtière et les technologies propres émergentes.',
+    url: 'https://www.acoa-apeca.gc.ca/en/Pages/home.aspx',
+    urlFr: 'https://www.acoa-apeca.gc.ca/fr/Pages/home.aspx',
+    notes: 'NL has a near-clean electricity grid (0.025 kg CO₂/kWh) — electrification projects have strong carbon credentials here.',
+    notesFr: 'T.-N.-L. a un réseau électrique presque propre (0,025 kg CO₂/kWh) — les projets d\'électrification ont de solides arguments carbone.',
+  },
+  {
+    id: 'nati-nl', provinces: ['NL'],
+    name: 'NL — Newfoundland & Labrador Innovation Program',
+    nameFr: 'T.-N.-L. — Programme d\'innovation de Terre-Neuve-et-Labrador',
+    funder: 'Dept. of Industry, Energy & Technology, NL', funderFr: 'Ministère de l\'Industrie, Énergie & Technologie, T.-N.-L.',
+    icon: '🦌', iconBg: '#fefce8',
+    maxAmount: 'Up to $100K', maxAmountFr: 'Jusqu\'à 100 000 $',
+    status: 'open', tags: ['provincial','rd','cleantech'],
+    deadline: 'Rolling — contact NL Dept. of IET', deadlineFr: 'Continu — contacter le ministère de l\'IÉT de T.-N.-L.',
+    window: 'Rolling intake. Contact the NL Department of Industry, Energy and Technology directly.',
+    windowFr: 'Accueil continu. Contacter directement le ministère de l\'Industrie, Énergie et Technologie de T.-N.-L.',
+    eligibility: 'NL-based companies or academic-industry partnerships with commercial innovation projects',
+    eligibilityFr: 'Entreprises de T.-N.-L. ou partenariats académiques-industriels avec des projets d\'innovation commerciale',
+    description: 'Provincial support for innovation and R&D in Newfoundland & Labrador. Smaller ticket sizes but accessible for early-stage companies. Ocean technology and energy sector applications are priority areas.',
+    descriptionFr: 'Soutien provincial à l\'innovation et à la R&D à T.-N.-L. Montants plus petits mais accessibles pour les entreprises en démarrage.',
+    url: 'https://www.gov.nl.ca/iet/business/funding-programs/',
+    urlFr: 'https://www.gov.nl.ca/iet/business/funding-programs/',
+    notes: 'NL\'s program landscape is less developed than larger provinces. ACOA is typically the primary funding source for NL companies.',
+    notesFr: 'Le paysage des programmes de T.-N.-L. est moins développé que dans les grandes provinces. APECA est généralement la principale source.',
+  },
+];
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let activeProvince = null;
+let activeFilters = new Set();
+let bookmarked = new Set(JSON.parse(localStorage.getItem('grantBookmarks_v2') || '[]'));
+let openCards = new Set();
+
+function saveBookmarks() { localStorage.setItem('grantBookmarks_v2', JSON.stringify([...bookmarked])); }
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+function init() {
+  renderProvinceChips();
+  renderFilterChips();
+  updateStats();
+  renderAll();
+}
+
+function updateStats() {
+  document.getElementById('statTotal').textContent = GRANTS.length;
+  document.getElementById('statOpen').textContent = GRANTS.filter(g => g.status === 'open' || g.status === 'rolling').length;
+  document.getElementById('statTracking').textContent = bookmarked.size;
+  document.getElementById('trackingCount').textContent = bookmarked.size;
+  const pill = document.getElementById('trackingPill');
+  pill.style.display = bookmarked.size > 0 ? 'flex' : 'none';
+}
+
+function renderProvinceChips() {
+  document.getElementById('provinceChips').innerHTML = PROVINCES.map(p => `
+    <button class="pchip ${p.id === 'federal' ? 'federal' : ''} ${activeProvince === p.id ? 'active' : ''}"
+      onclick="setProvince('${p.id}')">
+      ${lang === 'fr' ? p.labelFr : p.label}
+    </button>`).join('');
+}
+
+function renderFilterChips() {
+  document.getElementById('filterChips').innerHTML = TAG_DEFS.map(t => `
+    <button class="chip ${activeFilters.has(t.id) ? 'active' : ''}" onclick="toggleFilter('${t.id}')">
+      ${lang === 'fr' ? t.labelFr : t.label}
+    </button>`).join('');
+}
+
+function setProvince(id) {
+  activeProvince = activeProvince === id ? null : id;
+  renderProvinceChips();
+  renderAll();
+}
+
+function toggleFilter(id) {
+  activeFilters.has(id) ? activeFilters.delete(id) : activeFilters.add(id);
+  renderFilterChips();
+  renderAll();
+}
+
+function clearAll() {
+  activeProvince = null;
+  activeFilters.clear();
+  document.getElementById('searchInput').value = '';
+  renderProvinceChips();
+  renderFilterChips();
+  renderAll();
+}
+
+function getFiltered() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  return GRANTS.filter(g => {
+    if (activeProvince && !g.provinces.includes(activeProvince)) return false;
+    if (q) {
+      const hay = [t(g,'name'), t(g,'funder'), t(g,'description')].join(' ').toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    if (activeFilters.size === 0) return true;
+    for (const f of activeFilters) {
+      if (f === 'open' && g.status === 'open') return true;
+      if (f === 'rolling' && g.status === 'rolling') return true;
+      if (g.tags.includes(f)) return true;
+    }
+    return false;
+  });
+}
+
+function renderAll() {
+  const filtered = getFiltered();
+  const tracked = filtered.filter(g => bookmarked.has(g.id));
+  const untracked = filtered.filter(g => !bookmarked.has(g.id));
+
+  // Tracking
+  const ts = document.getElementById('trackingSection');
+  const tg = document.getElementById('trackingGrid');
+  if (tracked.length > 0) {
+    ts.classList.add('visible');
+    document.getElementById('trackingSectionCount').textContent = tracked.length;
+    tg.innerHTML = tracked.map(g => renderCard(g)).join('');
+  } else {
+    ts.classList.remove('visible');
+  }
+
+  // Count
+  const lbl = lang === 'fr'
+    ? `${untracked.length} programme${untracked.length !== 1 ? 's' : ''} affiché${untracked.length !== 1 ? 's' : ''}`
+    : `${untracked.length} program${untracked.length !== 1 ? 's' : ''} shown`;
+  document.getElementById('resultsCount').textContent = lbl;
+
+  // Grid
+  const grid = document.getElementById('grantGrid');
+  if (untracked.length === 0) {
+    grid.innerHTML = `<div class="empty-state">
+      <div class="empty-icon">🔍</div>
+      <div class="empty-title">${lang === 'fr' ? 'Aucun programme ne correspond' : 'No programs match'}</div>
+      <div class="empty-desc">${lang === 'fr' ? 'Essayez d\'ajuster vos filtres ou votre recherche' : 'Try adjusting your filters or search'}</div>
+    </div>`;
+  } else {
+    grid.innerHTML = untracked.map(g => renderCard(g)).join('');
+  }
+}
+
+function renderCard(g) {
+  const isBm = bookmarked.has(g.id);
+  const isOpen = openCards.has(g.id);
+  const statusMap = {
+    open: ['status-open', lang === 'fr' ? 'Ouvert' : 'Open'],
+    rolling: ['status-rolling', lang === 'fr' ? 'Continu' : 'Rolling'],
+    closing: ['status-closing', lang === 'fr' ? 'Bientôt fermé' : 'Closing Soon'],
+    closed: ['status-closed', lang === 'fr' ? 'Fermé' : 'Closed'],
+  };
+  const [statusCls, statusLbl] = statusMap[g.status] || statusMap.open;
+
+  const tagMap = {
+    federal:   ['tag-federal',   lang === 'fr' ? 'Fédéral' : 'Federal'],
+    provincial:['tag-provincial', lang === 'fr' ? 'Provincial' : 'Provincial'],
+    ai:        ['tag-ai',        'AI / IA'],
+    cleantech: ['tag-cleantech', lang === 'fr' ? 'Techno. propre' : 'Cleantech'],
+    rd:        ['tag-rd',        'R&D'],
+    energy:    ['tag-energy',    lang === 'fr' ? 'Énergie' : 'Energy'],
+    financing: ['tag-financing', lang === 'fr' ? 'Financement' : 'Financing'],
+  };
+
+  const provinceBadge = g.provinces.includes('federal') ? '' :
+    `<span class="province-badge">${g.provinces[0]}</span>`;
+
+  const tagHtml = g.tags.map(tag => {
+    const [cls, lbl] = tagMap[tag] || ['', tag];
+    return `<span class="tag ${cls}">${lbl}</span>`;
+  }).join('');
+
+  const dl = lang === 'fr' ? 'Échéance' : 'Deadline';
+  const el = lang === 'fr' ? 'Admissibilité' : 'Eligibility';
+  const al = lang === 'fr' ? 'Montant max.' : 'Max. Amount';
+  const wl = lang === 'fr' ? 'Fenêtre d\'accueil' : 'Intake Window';
+  const nl = lang === 'fr' ? 'À noter' : 'Note';
+  const ll = lang === 'fr' ? 'Voir le programme →' : 'View Program →';
+  const bml = isBm ? (lang === 'fr' ? 'Retirer du suivi' : 'Remove') : (lang === 'fr' ? 'Suivre' : 'Track');
+
+  const linkUrl = (lang === 'fr' && g.urlFr) ? g.urlFr : g.url;
+
+  return `<div class="grant-card ${isBm ? 'bookmarked' : ''} ${isOpen ? 'open' : ''}" id="gc-${g.id}">
+    <div class="grant-header" onclick="toggleCard('${g.id}')">
+      <div class="grant-funder-icon" style="background:${g.iconBg}">${g.icon}</div>
+      <div class="grant-header-main">
+        <div class="grant-name">${t(g,'name')}</div>
+        <div class="grant-funder-label">${t(g,'funder')}</div>
+        <div class="grant-meta-row">
+          <span class="status-badge ${statusCls}">${statusLbl}</span>
+          <span class="amount-pill">${t(g,'maxAmount')}</span>
+          ${provinceBadge}
+          ${tagHtml}
+        </div>
+      </div>
+      <div class="grant-header-right" onclick="event.stopPropagation()">
+        <button class="bookmark-btn ${isBm ? 'active' : ''}" title="${bml}" onclick="toggleBookmark('${g.id}')">🔖</button>
+        <div class="expand-chevron" onclick="event.stopPropagation();toggleCard('${g.id}')">▼</div>
+      </div>
+    </div>
+    <div class="grant-body">
+      <div class="grant-body-grid">
+        <div>
+          <div class="gb-label">${lang === 'fr' ? 'Description' : 'About'}</div>
+          <div class="gb-text">${t(g,'description')}</div>
+        </div>
+        <div>
+          <div class="gb-label">${lang === 'fr' ? 'Détails' : 'Details'}</div>
+          <div class="gb-row"><span class="gb-key">${al}</span><span class="gb-val">${t(g,'maxAmount')}</span></div>
+          <div class="gb-row"><span class="gb-key">${dl}</span><span class="gb-val">${t(g,'deadline')}</span></div>
+          <div class="gb-row"><span class="gb-key">${el}</span><span class="gb-val" style="font-size:10px;line-height:1.4">${t(g,'eligibility')}</span></div>
+          ${g.window ? `<div class="gb-window"><div class="gb-window-label">${wl}</div><div class="gb-window-text">${t(g,'window')}</div></div>` : ''}
+          ${g.notes ? `<div class="gb-note"><div class="gb-note-label">${nl}</div><div class="gb-note-text">${lang==='fr'&&g.notesFr?g.notesFr:g.notes}</div></div>` : ''}
+        </div>
+      </div>
+      <a class="grant-link" href="${linkUrl}" target="_blank" rel="noopener">${ll}</a>
+    </div>
+  </div>`;
+}
+
+function toggleCard(id) {
+  openCards.has(id) ? openCards.delete(id) : openCards.add(id);
+  document.querySelectorAll(`#gc-${id}`).forEach(el => el.classList.toggle('open', openCards.has(id)));
+}
+
+function toggleBookmark(id) {
+  bookmarked.has(id) ? bookmarked.delete(id) : bookmarked.add(id);
+  saveBookmarks();
+  updateStats();
+  renderAll();
+}
+
+function scrollToTracking() {
+  document.getElementById('trackingSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+init();
+</script>
+</body>
+</html>
