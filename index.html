@@ -165,6 +165,30 @@ footer { max-width: 1140px; margin: 0 auto; padding: 20px 24px 40px; border-top:
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
+/* WARNING BANNER */
+.warning-banner {
+  background: #fffbeb;
+  border-bottom: 1.5px solid #fde68a;
+  padding: 10px 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #92400e;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.5;
+}
+.warning-banner-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.warning-banner strong {
+  font-weight: 700;
+}
+@media (max-width: 780px) {
+  .warning-banner { padding: 10px 16px; font-size: 11px; }
+}
+
 @media (max-width: 780px) {
   header { padding: 0 16px; }
   main { padding: 20px 14px 60px; }
@@ -204,6 +228,11 @@ footer { max-width: 1140px; margin: 0 auto; padding: 20px 24px 40px; border-top:
     </div>
   </div>
 </header>
+
+<div class="warning-banner">
+  <span class="warning-banner-icon">⚠️</span>
+  <span data-en="<strong>Heads up:</strong> Program links may go stale as agencies update their websites. If a link doesn't work, the program likely still exists — a quick Google search by program name will get you there." data-fr="<strong>Attention :</strong> Les liens de programmes peuvent devenir obsolètes lorsque les agences mettent à jour leurs sites. Si un lien ne fonctionne pas, le programme existe probablement encore — une recherche rapide par nom de programme vous y amènera."><strong>Heads up:</strong> Program links may go stale as agencies update their websites. If a link doesn't work, the program likely still exists — a quick Google search by program name will get you there.</span>
+</div>
 
 <main>
   <div class="hero">
@@ -310,7 +339,7 @@ const GRANTS = [
     eligibilityFr: 'PME canadiennes <500 employés développant des technologies innovantes',
     description: 'Canada\'s flagship SME R&D program. Now incorporates the former SDTC cleantech mandate. Provides advisory services and funding from proof-of-concept to multi-year commercialization projects. Works across all sectors including AI and energy.',
     descriptionFr: 'Principal programme de R&D pour PME au Canada. Intègre maintenant le mandat de TDDC pour les technologies propres. Financement du concept à la commercialisation.',
-    url: 'https://nrc.canada.ca/en/support-technology-innovation/nrc-industrial-research-assistance-program',
+    url: 'https://nrc.canada.ca/en/support-technology-innovation/financial-support-technology-innovation',
     urlFr: 'https://cnrc.canada.ca/fr/soutien-innovation-technologique/programme-aide-recherche-industrielle-cnrc',
     notes: 'Your regional Industrial Technology Advisor (ITA) relationship is the key. Call 1-877-994-4727 to get connected.',
     notesFr: 'La relation avec votre conseiller en technologie industrielle (CTI) régional est essentielle. Composez le 1-877-994-4727.',
@@ -329,7 +358,7 @@ const GRANTS = [
     eligibilityFr: 'Toute entreprise canadienne s\'associant à une université pour des projets R&D de 4–6 mois',
     description: 'Partners companies with graduate students for R&D projects. Company contributes $7,500; Mitacs matches. Ideal for AI model development, data pipelines, and cleantech prototyping. QC companies get additional FRQNT top-up.',
     descriptionFr: 'Met en relation des entreprises avec des étudiants pour des projets R&D. L\'entreprise contribue 7 500 $; Mitacs verse un montant équivalent. Complément FRQNT disponible au Québec.',
-    url: 'https://www.mitacs.ca/our-programs/accelerate-fellowship-canada/',
+    url: 'https://www.mitacs.ca/our-programs/accelerate/',
     urlFr: 'https://www.mitacs.ca/fr/programmes/acceleration/',
     notes: 'Most accessible entry point to Mitacs. Best for companies already connected to a university.',
     notesFr: 'Point d\'entrée Mitacs le plus accessible. Idéal pour les entreprises déjà connectées à une université.',
@@ -388,8 +417,8 @@ const GRANTS = [
     eligibilityFr: 'Projets de R&D et de commercialisation à grande échelle — typiquement Série B+',
     description: 'Major federal program for transformative R&D, technology demonstration, and industrial scale-up. Five streams: Agri-food, Clean technology, Digital industries, Life sciences, and Value chains.',
     descriptionFr: 'Programme fédéral majeur pour la R&D transformatrice et la montée en échelle industrielle. Cinq volets : Agroalimentaire, Technologies propres, Industries numériques, Sciences de la vie, et Chaînes de valeur.',
-    url: 'https://ised.canada.ca/site/strategic-innovation-fund/en',
-    urlFr: 'https://ised.canada.ca/site/fonds-strategique-innovation/fr',
+    url: 'https://ised-isde.canada.ca/site/ised/en/programs-and-initiatives/strategic-response-fund/strategic-innovation-fund',
+    urlFr: 'https://ised-isde.canada.ca/site/ised/fr/programmes-et-initiatives/fonds-reponse-strategique/fonds-strategique-innovation',
     notes: 'Best for growth-stage companies. Application timeline is long — begin the process 18+ months before you need the capital.',
     notesFr: 'Idéal pour les entreprises en croissance. Commencez le processus 18 mois avant d\'avoir besoin des fonds.',
   },
@@ -407,8 +436,8 @@ const GRANTS = [
     eligibilityFr: 'Entreprises et organismes développant des technologies d\'énergie propre',
     description: 'Funds R&D, demonstration, and deployment of clean energy technologies. Priority areas: smart grids, building energy efficiency, industrial decarbonization, energy storage, and hydrogen.',
     descriptionFr: 'Finance R&D, démonstration et déploiement de technologies d\'énergie propre. Priorités : réseaux intelligents, efficacité énergétique, décarbonisation industrielle, stockage d\'énergie.',
-    url: 'https://natural-resources.canada.ca/science-and-data/funding-partnerships/funding-opportunities/energy-innovation-program/18876',
-    urlFr: 'https://ressources-naturelles.canada.ca/science-et-donnees/financement-et-partenariats/possibilites-de-financement/programme-innovation-energie/18876',
+    url: 'https://natural-resources.canada.ca/funding-partnerships/energy-innovation-program',
+    urlFr: 'https://ressources-naturelles.canada.ca/partenariats-de-financement/programme-innovation-energie',
     notes: 'Particularly relevant for companies building products in the building energy or smart grid space.',
     notesFr: 'Particulièrement pertinent pour les entreprises dans le domaine de l\'énergie des bâtiments ou des réseaux intelligents.',
   },
@@ -484,8 +513,8 @@ const GRANTS = [
     eligibilityFr: 'PME canadiennes <500 employés avec des technologies au stade prototype',
     description: 'Challenge-based program where government departments post technology problems. Companies solve them for up to $150K (proof-of-concept) or $1M (prototype), and may receive a follow-on government procurement contract.',
     descriptionFr: 'Programme basé sur des défis où les ministères publient des problèmes technologiques. Les entreprises les résolvent pour jusqu\'à 150 000 $ (preuve de concept) ou 1 M$ (prototype).',
-    url: 'https://www.ic.gc.ca/eic/site/101.nsf/eng/home',
-    urlFr: 'https://www.ic.gc.ca/eic/site/101.nsf/fra/accueil',
+    url: 'https://ised-isde.canada.ca/site/innovative-solutions-canada/en/innovative-solutions-canada',
+    urlFr: 'https://ised-isde.canada.ca/site/solutions-innovatrices-canada/fr/solutions-innovatrices-canada',
     notes: 'Less competition than IRAP — challenges are specific. Monitor the ISC site for new challenges relevant to your technology.',
     notesFr: 'Moins de concurrence qu\'IRAP — les défis sont spécifiques. Surveillez le site SIC pour les nouveaux défis pertinents.',
   },
@@ -886,8 +915,8 @@ const GRANTS = [
     eligibilityFr: 'Entreprises du N.-B. ou partenariats académiques-industriels travaillant sur la R&D',
     description: 'New Brunswick\'s primary provincial innovation funder. Supports R&D with commercial potential across all sectors. Offers research funding and entrepreneur-in-residence programs.',
     descriptionFr: 'Principal bailleur de fonds provincial en innovation du Nouveau-Brunswick. Soutient la R&D à potentiel commercial dans tous les secteurs.',
-    url: 'https://www.nbif.ca/en/programs/',
-    urlFr: 'https://www.nbif.ca/fr/programmes/',
+    url: 'https://nbif.ca/',
+    urlFr: 'https://nbif.ca/',
     notes: 'NBIF is the first call for NB innovation companies. Engage their team early — they can help identify additional funding sources.',
     notesFr: 'NBIF est le premier appel pour les entreprises d\'innovation au N.-B. Engagez leur équipe tôt.',
   },
